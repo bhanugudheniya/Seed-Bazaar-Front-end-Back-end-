@@ -1,0 +1,84 @@
+/* .regular-font
+{
+    font-family: 'FuturaBook';
+}
+
+.medium-font
+{
+    font-family: 'FuturaMedium';
+}
+
+.heavy-font
+{
+    font-family: 'FuturaHeavy';
+}
+body
+{
+    font-family: 'FuturaBook';
+}
+
+.philosophy
+{
+    background-color: #EBFFD9;
+    
+}
+.philosophybg
+{
+    height: 738px;
+    padding-top:250px !important;
+    background-color: #EBFFD9;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.diff-heading, .best-heading
+{
+    font-size: 50px;
+}
+
+@media only screen and (max-width: 600px)
+{
+    .philosophy .container .row .diff-head h1
+    {
+        text-align: center;
+    }
+    .diff-heading
+    {
+        position: relative;
+        bottom:30px;
+    }
+    .diff-content
+    {
+        position: relative;
+        bottom:30px;
+    }
+    .best-content{
+        position: relative;
+        top:100px;
+    }
+    .best-heading{
+        text-align:center !important;
+        position: relative;
+        bottom: 150px;
+    }
+    .mobilePos{
+        position: relative;
+        top: -40px;
+        left: 0px;
+    }
+    .best__content_MObile{
+        position: relative;
+        top: -40px;
+        left: 0px;
+    }
+} */
+
+.setPos {
+    margin-top: -500px;
+}
+
+@media only screen and (max-width: 600px) {
+    .setPos {
+        margin-top: unset;
+    }
+}

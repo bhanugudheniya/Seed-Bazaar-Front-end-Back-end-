@@ -1,0 +1,93 @@
+<app-adminsidebar></app-adminsidebar>
+<div class="container">
+    <div class="row" style="background-color: #F6F6F6;">
+      <div class="col-lg-12 col-md-12">
+        <h2 style="text-align: center;">View Discount Codes</h2>
+        <div class="d-flex justify-content-end mb-2">
+          <button type="button" class="btn btn-info" routerLink="/admin/discountcode/create">Add <i class="fas fa-plus"></i></button>
+
+        </div>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Valid Till</th>
+                <th>View Details</th>
+                <th>Update</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let obj of discountCodeArr">
+                <td>{{obj.name}}</td>
+                <td>{{obj.validTill | date :'short'}}</td>
+                <td><button class="btn btn-primary" routerLink="/admin/discountcode/viewdetails/{{obj._id}}">View Details</button></td>
+                <td><button class="btn btn-danger" (click)="setUpdate(obj)" data-toggle="modal" data-target="#exampleModal">Update</button></td>
+                <td><button class="btn btn-info" (click)="deleteCode(obj._id)">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-row">
+              <div class="form-group col-md-6">
+                  <label for="Name"><b>Discount code Name</b></label>
+                  <input type="text" class="form-control" name="name" [(ngModel)]="updateObj.name" />
+              </div>
+              <div class="form-group col-md-6">
+                  <label for="Name"><b>Discount code </b></label>
+                  <input type="text" class="form-control" name="code" [(ngModel)]="updateObj.code" />
+              </div>
+              <div class="form-group col-md-6">
+                  <label for="Discription"><b>Discount code Value</b></label>
+                  <input type="text" class="form-control" name="value" [(ngModel)]="updateObj.value" />
+              </div>
+              <div class="form-group col-md-6">
+                  <label><b>Type</b></label>
+                  <select class="form-control" [(ngModel)]="type" name="type">
+                      <option value="1">Percentage Off</option>
+                      <option value="2">Amount Off</option>
+                      <option value="3">Set price</option>
+                  </select>
+             </div>
+              <div class="form-group col-md-6">
+                  <label for="Discription"><b>Product Name</b></label>
+                  <select class="form-control" name="productName" [(ngModel)]="productName">
+                    <option *ngFor="let obj of productArr">{{obj.name}}</option>
+                </select>
+              </div>
+
+
+              <div class="form-group col-md-6">
+                  <label for="Discription"><b>Date valid from</b></label>
+                  <input type="date" class="form-control" name="validFrom" [(ngModel)]="updateObj.validFrom" />
+              </div>
+
+              <div class="form-group col-md-6">
+                  <label for="Discription"><b>Date valid till</b></label>
+                  <input type="date" class="form-control" name="validTill" [(ngModel)]="updateObj.validTill" />
+              </div>
+          </div>
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="discountCodeUpdate(updateObj._id)">Update</button>
+      </div>
+    </div>
+  </div>
+</div>

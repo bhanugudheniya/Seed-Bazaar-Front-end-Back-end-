@@ -1,0 +1,53 @@
+
+
+
+<div class="container-fluid bg-image">
+    <div class="row d-flex justify-content-center">
+      <div class="col-11">
+        <div
+          class="row d-flex justify-content-lg-between justify-content-center my-4"
+        >
+          <div class="col-lg-3 col-12">
+            <div class="row d-flex justify-content-between">
+              <div class="col-6 col-lg-12">
+                <img
+                  src="../../../assets/img/logo/logo2.png"
+                  alt=""
+                  class="LogoStyle"
+                />
+              </div>
+              <div class="col-6 d-flex justify-content-end" *ngIf="windowWidth>600==false"  (click)="toggleHeader()"><i class="fas fa-bars barsIcon"></i></div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-12">
+            <div
+            class="row d-flex justify-content-center headerItemContainer"
+            [class.headerItemContainerVisible]="headerItemVisible == true"
+            [class.headerItemContainerNotVisible]="headerItemVisible == false"
+          >
+            <div class="col-lg-2 col-7"[class.headerItemVisible]="headerItemVisible == true" [class.headerItemnotVisible]="headerItemVisible == false">
+              <span routerLinkActive="activevisible" routerLink="/" [routerLinkActiveOptions]="{exact:
+                true}">Home</span>
+            </div>
+            <div class="col-lg-2 col-7"  [class.headerItemVisible]="headerItemVisible == true" [class.headerItemnotVisible]="headerItemVisible == false">
+              <span routerLinkActive="activevisible" routerLink="/category" class="">Products</span>
+            </div>
+            <div class="col-lg-2 col-7" [class.headerItemVisible]="headerItemVisible == true" [class.headerItemnotVisible]="headerItemVisible == false">
+              <span routerLinkActive="activevisible"routerLink="/blog"  class="">Blogs</span>
+            </div>
+            <div class="col-lg-2 col-7 " [class.headerItemVisible]="headerItemVisible == true" [class.headerItemnotVisible]="headerItemVisible == false">
+              <span routerLinkActive="activevisible" routerLink="/about" class="">About Us</span>
+            </div>
+            <div class="col-lg-2 col-7 " [class.headerItemVisible]="headerItemVisible == true" [class.headerItemnotVisible]="headerItemVisible == false">
+              <span routerLinkActive="activevisible" routerLink="/contact"  class="contactBtn"  [class.contactBtnVisible]="headerItemVisible == true" [class.contactBtnNotVisible]="headerItemVisible == false">Contact</span>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  
+
+

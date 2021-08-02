@@ -1,0 +1,202 @@
+<app-adminsidebar></app-adminsidebar>
+
+<div class="container pb-3">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 mt-2">
+      <h2 style="text-align: center;">Add Product </h2>
+
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="Name"><b>Name</b></label>
+            <input type="text" class="form-control" name='name' [(ngModel)]='name' />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="Name"><b>Products Details</b></label>
+            <input type="text" class="form-control" name='productDetails' [(ngModel)]='productDetails' />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="Discription"><b>Additional Details</b></label>
+            <input type="text" class="form-control" name='additionalDetails' [(ngModel)]='additionalDetails' />
+          </div>
+        </div>
+        <div class="form-row">
+          <!-- <div class="form-group col-md-3">
+            <label for="metaTagName"><b>List Price</b></label>
+            <input type="number" class="form-control" name='listPrice' [(ngModel)]='listPrice' />
+          </div> -->
+          <!-- <div class="form-group col-md-3">
+            <label for="metaTagName"><b>Minimum Order Price</b></label>
+            <input type="number" class="form-control" name='minimumOrderPrice' [(ngModel)]='minimumOrderPrice' />
+          </div> -->
+          <div class="form-group col-md-6">
+            <label for="metaTagName"><b>Handling Fee</b></label>
+            <input type="number" class="form-control" name='handlingFee' [(ngModel)]='handlingFee' />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="metaTagName"><b>Shipping Fee</b></label>
+            <input type="number" class="form-control" name='shippingFee' [(ngModel)]='shippingFee' />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="basic-url"><b>Url</b></label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">https://nsuperfood.in/product/</span>
+              </div>
+              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name='url'
+                [(ngModel)]='url'>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="Discription"><b>SKU</b></label>
+            <input type="text" class="form-control" name='SKU' [(ngModel)]='SKU' />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="metaTagName"><b>Featured</b></label> &nbsp;&nbsp;
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="featuredyes" name="featured" class="custom-control-input" value=true
+                name='featured' [(ngModel)]='featured'>
+              <label class="custom-control-label" for="featuredyes">Yes</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="featuredno" name="featured" class="custom-control-input" value=false
+                name='featured' [(ngModel)]='featured'>
+              <label class="custom-control-label" for="featuredno">No</label>
+            </div>
+
+
+          </div>
+          
+          <div class="form-group col-md-3">
+            <label for="metaTagName"><b>Free Shipping</b></label>&nbsp;&nbsp;
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="freeshippingyes" name="freeshipping" class="custom-control-input" value=true
+                name='freeShipping' [(ngModel)]='freeShipping'>
+              <label class="custom-control-label" for="freeshippingyes">Yes</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="freeshippingno" name="freeshipping" class="custom-control-input" value=false
+                name='freeShipping' [(ngModel)]='freeShipping'>
+              <label class="custom-control-label" for="freeshippingno">No</label>
+            </div>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="metaTagName"><b>Review Allowed</b></label>&nbsp;&nbsp;
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="reviewyes" name="review" class="custom-control-input" value=true
+                name='reviewAllowed' [(ngModel)]='reviewAllowed'>
+              <label class="custom-control-label" for="reviewyes">Yes</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">&nbsp;&nbsp;
+              <input type="radio" id="reviewno" name="review" class="custom-control-input" value=false
+                name='reviewAllowed' [(ngModel)]='reviewAllowed'>
+              <label class="custom-control-label" for="reviewno">No</label>
+            </div>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="metaTagName"><b>Need Changes </b></label>&nbsp;
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input"
+                value=true name='needChanges' [(ngModel)]='needChanges'>
+              <label class="custom-control-label" for="customRadioInline1">Yes</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">&nbsp;&nbsp;
+              <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input"
+                value=false name='needChanges' [(ngModel)]='needChanges'>
+              <label class="custom-control-label" for="customRadioInline2">No</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="Name"><b>Product Variant</b></label>
+            <div>
+              <form>
+                <div class="form-group" *ngFor="let obj of variantArr;index as i">
+                  <label>{{obj.variantName}} &nbsp; &nbsp; </label>
+                  <label> {{obj.variantprice | currency:'INR'}} &nbsp;&nbsp;</label>
+                  <label> <s>{{obj.variantmrp | currency:'INR'}}</s> &nbsp;&nbsp;</label>
+
+                  <label> {{obj.variantStock}}</label>
+                  
+                  <!-- <label> {{obj.variantMinimumPrice}}</label> -->
+
+                  <button type="button" class="btn btn-danger" (click)="deleteVariant(i)">&times;</button>
+                </div>
+                <h5>Please Dont forget to add the Product Variant and its price by clicking the add variant button <b> (otherwise a lot of things WILL NOT WORK)</b> </h5><br>
+                <div class="input-group">
+                  <input type="text" placeholder="Variant weight/volume" class="form-control mr-2" name="productVariant" [(ngModel)]="productVariant" />
+                  <input type="number" placeholder="Variant Price" class="form-control mr-2" name="varaintPrice" [(ngModel)]="varaintPrice" />
+                  <input type="number" placeholder="Variant Mrp" class="form-control mr-2" name="mrp" [(ngModel)]="mrp" />
+                  <input type="number" placeholder="Variant Stock" class="form-control mr-2" name="varaintStock" [(ngModel)]="varaintStock" />
+
+                  <!-- <input type="number" placeholder="Variant Minimum Price" class="form-control mr-2" name="variantMinimumPrice" [(ngModel)]="variantMinimumPrice" /> -->
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" type="button" (click)="addVariant(productVariant,varaintPrice,varaintStock,mrp)">Add
+                      Variant</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="Name"><b>Category</b></label>
+            <div>
+              <form>
+                <div class="form-group" *ngFor="let category of setCategoryArr;index as i">
+                  <label>{{category.name}}</label>
+                  <button type="button" class="btn btn-danger" (click)="deleteCategory(i)">&times;</button>
+                </div>
+                <h5>Please Dont forget to add the category by clicking the add category button</h5><br>
+                <div class="input-group">
+                  <select class="custom-select" name='category' [(ngModel)]='category'>
+                    <option value="">Choose A category</option>
+                    <option *ngFor="let obj of categoryArr" value="{{obj.name}}.{{obj._id}}">{{obj.name}}</option>
+                  </select>
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" type="button" (click)="addCategory(category)">Add
+                      Category</button>
+                  </div>
+                </div>
+                <form enctype="multipart/form-data">
+                  <div class="form-group">
+                    <label for="exampleFormControlFile1"><b>Product Main Image</b></label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1"
+                      (change)="onFileChange($event)">
+                  </div>
+                </form>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+
+          <label for=""><b>Product Content </b></label>
+
+          <angular-editor name="blog" [placeholder]="'Enter text here...'" [(ngModel)]="blog" [config]="editorConfig">
+          </angular-editor>
+        </div>
+        <div class="form-row mt-4">
+          <div class="form-group col-md-12 btn2">
+            <button type="button" class="btn btn-success" (click)="createProduct()">Submit</button>
+          </div>
+
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<app-admin-view-all-products></app-admin-view-all-products>

@@ -1,0 +1,26 @@
+<app-user-all-page-header></app-user-all-page-header>
+
+<!-- <app-userheader></app-userheader> -->
+<section class="blog-detail pt-5 d-flex justify-content-center setPos" *ngIf="blogObj">
+    <div class="container">
+        <div class="row mx-auto">
+            <div class="col-md-12 text-center">
+                <img src="{{mainurl}}/uploads/{{blogObj.file}}" alt="" width="900px">
+            </div>
+            <div class="col-md-12 text-justify">
+                <h1 class="single-blog-title pt-3">{{blogObj.name}}</h1>
+                <span class="blog-date"><i class="fa fa-calendar-alt"></i>
+                    {{blogObj.dateAdded | date:'dd MMM y' }}</span> &nbsp; &nbsp;
+                <span class="blog-author"><i class="far fa-edit"></i> {{blogObj.author}}</span>
+                <div class="blog-main-content pt-3" [innerHtml]="blogObj.Blog">
+
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<app-user-letter></app-user-letter>
+<app-user-foooter></app-user-foooter>

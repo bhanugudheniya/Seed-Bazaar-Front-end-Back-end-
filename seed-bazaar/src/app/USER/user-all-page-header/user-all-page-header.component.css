@@ -1,0 +1,175 @@
+.bg-image {
+    background-image: url("../../../assets/newuiimages/rect.png");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+.LogoStyle {
+    height: 60px;
+}
+
+.headerItemVisible,.headerItemnotVisible {
+    color: black;
+    font-weight: 100;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.activevisible,.activenotvisible {
+    border-bottom: solid 2px #00DBD0;
+    padding-bottom: 5px;
+}
+
+.contactBtnVisible  {
+    border: solid 2px #788B76;
+    border-radius: 10px;
+    padding: 10px 30px;
+}
+
+.backgroundImageSize {
+    position: absolute;
+    right: -40px;
+    top: 10vh;
+    height: 90vh;
+    width: 55% !important;
+}
+
+.textContainer {
+    position: absolute;
+    top: 30vh;
+}
+
+.headerLineOne {
+    font-size: 30px;
+    font-weight: 300;
+    margin-top: 10px;
+    color: #273746;
+}
+
+.headerLineTwo {
+    font-size: 56px;
+    font-weight: bold;
+    margin: 20px 0px;
+    color: #273746;
+}
+
+.headerLineThree {
+    font-size: 20px;
+    font-weight: 200;
+    margin: 50px 0px 30px 0px;
+    color: #273746;
+}
+
+.exploreNowbtn {
+    background-color: #00DBD0;
+    color: white;
+    width: 80%;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-weight: 800;
+    padding: 10px 0px;
+}
+
+@media only screen and (max-width: 600px) {
+    .headerItem {
+        font-size: 16px;
+        text-align: center;
+    }
+    .bg-image {
+        height: unset;
+        background-size: auto;
+        background-repeat: no-repeat;
+    }
+    .LogoStyle {
+        height: 60px;
+    }
+    .backgroundImageSize {
+        position: absolute;
+        right: 0px !important;
+        top: 18vh;
+        height: 40vh;
+        width: 79% !important;
+        z-index: -1 !important;
+    }
+    .headerItemContainerNotVisible {
+        margin: 0px 0px !important;
+        background-color: rgb(255, 255, 255);
+        height: 0px !important;
+        box-sizing: border-box;
+        visibility: hidden;
+        z-index: 150 !important;
+        transition: ease-in-out all 1s;
+    }
+    .headerItemContainerVisible {
+        margin: 0px 0px !important;
+        background-color: rgb(255, 255, 255);
+        height: 250px !important;
+        box-sizing: border-box;
+        visibility: visible;
+        z-index: 150 !important;
+        transition: ease-in-out all 1s;
+        box-shadow: 0px 2px 5px 0px rgba(133,131,133,1);
+    }
+    .headerItemnotVisible {
+        font-size: 12px;
+        color: transparent;
+        margin: 7px 0px;
+        transition: ease-in-out color 0.2s;
+        visibility: none !important;
+    }
+    .headerItemVisible {
+        font-size: 12px;
+        margin: 7px 0px;
+        color: black;
+        transition: ease-in-out color 0.5s;
+        visibility: none !important;
+    }
+    .contactBtnVisible {
+        border: solid 2px #788B76;
+        transition: ease-in-out all 1.5s;
+        border-radius: 10px;
+        padding: 10px 30px;
+    }
+    .contactBtnNotVisible {
+        border: solid 0px #788B76;
+        transition: ease-in-out all 0.2s;
+        border-radius: 10px;
+        padding: 10px 30px;
+    }
+    .activevisible {
+        border-bottom: solid 2px #00DBD0;
+        transition: ease-in-out all 1.2s;
+        padding-bottom: 5px;
+    }
+    .activenotvisible {
+        border-bottom: solid 0px #00DBD0;
+        transition: ease-in-out all 0.2s;
+        padding-bottom: 5px;
+    }
+
+    .textContainer {
+        position: absolute;
+        top: 48vh;
+        margin-bottom: 20vh !important;
+    }
+    .headerLineOne {
+        font-size: 16px;
+        z-index: -1 !important;
+    }
+    .headerLineTwo {
+        font-size: 20px;
+    }
+    .headerLineThree {
+        font-size: 12px;
+        margin: 15px 0px 30px 0px;
+    }
+    .barsIcon{
+        color: black;
+        font-size: 28px;
+    }
+}

@@ -1,0 +1,13 @@
+.manual{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-color: lightgrey;
+}
+
+.manual small {
+    text-decoration: underline;
+    cursor: pointer;
+}

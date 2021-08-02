@@ -1,0 +1,43 @@
+.container
+{
+    background-color:whitesmoke;
+    height: 650px;
+}
+.row-1
+{
+    height: 100px;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.row-2
+{
+    height: 200px;
+}
+.row-2 h2
+{
+    font-size: 25px;
+    position: relative;
+    left: 90px;
+}
+.row-2 input
+{
+    width: 450px;
+    height: 40px;
+    position: relative;
+    top: 25px;
+    margin-left: 90px;
+    border-radius: 10px;
+}
+.row-3
+{
+    height: 300px;
+    text-align: center;
+}
+.row-3 button
+{
+    border-radius: 20px;
+    width: 300px;
+    font-size: 30px;
+    background-color:lightskyblue;
+    color: white;
+}

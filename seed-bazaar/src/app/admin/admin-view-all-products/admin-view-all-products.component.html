@@ -1,0 +1,365 @@
+<!-- <app-adminsidebar></app-adminsidebar> -->
+
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <h2 style="text-align: center;">View All Products</h2>
+      <input type="text" name="search" [(ngModel)]="search" placeholder="search">
+
+      <div class="table-responsive">
+
+        <table class="table table-hover ">
+          <thead>
+            <tr>
+              <th scope="col">S.No</th>
+              <th scope="col" (click)="setOrder('name')">Name<span *ngIf="reverse==true">&uarr;</span>
+                <span *ngIf="reverse==false">&darr;</span></th>
+              <th scope="col">Product Details</th>
+              <th scope="col">Manage</th>
+              <th scope="col">Manage Images</th>
+
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr *ngFor="let obj of productArr | orderBy: order:reverse | filter:search ;index as i">
+              <th scope="row">{{i+1}}</th>
+              <td>{{obj.name}}</td>
+              <td>{{obj.productDetails}}</td>
+              <td>
+                <button type="button" class="btn btn-warning" routerLink="/admin/product/specific/{{obj.url}}">View
+                  Details</button> &nbsp;&nbsp;
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-xl"
+                  (click)=setUpdate(obj)>Update</button>&nbsp;&nbsp;
+
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"
+                  (click)="setDelete(obj._id)">Delete</button>
+                <!-- <button type="button" class="btn-success" routerLink="/">View</button> -->
+              </td>
+              <td>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalImage"
+                  (click)="setImage(obj)">Add Image</button>
+                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalImage"
+                  (click)="setImage(obj)">Update Thumbnail</button> -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalViewImage" (click)="setImage(obj)">View And Set Images</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalDeleteImage" (click)="setImage(obj)">Delete Images</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document" *ngIf="imageObj">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete ? </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">No</button>
+        <button type="button" class="btn btn-danger" (click)="deleteProduct()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Images Modal -->
+<div class="modal fade" id="exampleModalImage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document" *ngIf="imageObj">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Images to {{imageObj.name}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form enctype="multipart/form-data">
+          <div class="form-group">
+            <input type="file" class="form-control-file" id="exampleFormControlFile1" (change)="onFileChange($event)">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="addImageToProduct()">Upload</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- View Image -->
+<div class="modal fade" id="exampleModalViewImage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document" *ngIf="imageObj">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Select Image To Update Thumbnail </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p *ngFor="let obj of imageObj.sliderFilePath;index as i">
+          <img  [src]="showImageUpdate(obj)" height="100px" width="100px" />
+          <button (click)="updateImage(obj,imageObj._id)" class="btn btn-success">Select this image</button>
+          <br>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--delete Image -->
+<div class="modal fade" id="exampleModalDeleteImage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Images </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p *ngFor="let obj of imageObj.sliderFilePath;index as i">
+          <img  [src]="showImageUpdate(obj)" height="100px" width="100px" />
+          <button (click)="deleteImage(obj,imageObj._id)" class="btn btn-danger">Delete this image</button>
+          <br>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Update Modal -->
+<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
+  aria-hidden="true" *ngIf="productUpdate!=null">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 style="text-align: center;">Update Product {{productUpdate.name}}</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 mt-2">
+
+              <form>
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label for="Name"><b>Name</b></label>
+                    <input type="text" class="form-control" name='name' [(ngModel)]='productUpdate.name' disabled />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="Name"><b>Products Details</b></label>
+                    <input type="text" class="form-control" name='productDetails'
+                      [(ngModel)]='productUpdate.productDetails' />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="Discription"><b>Additional Details</b></label>
+                    <input type="text" class="form-control" name='additionalDetails'
+                      [(ngModel)]='productUpdate.additionalDetails' />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <!-- <div class="form-group col-md-3">
+                    <label for="metaTagName"><b>Minimum Order Price</b></label>
+                    <input type="number" class="form-control" name='minimumOrderPrice'
+                      [(ngModel)]='productUpdate.minimumOrderPrice' />
+                  </div> -->
+                  <div class="form-group col-md-6">
+                    <label for="metaTagName"><b>Handling Fee</b></label>
+                    <input type="number" class="form-control" name='handlingFee'
+                      [(ngModel)]='productUpdate.handlingFee' />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="metaTagName"><b>Shipping Fee</b></label>
+                    <input type="number" class="form-control" name='shippingFee'
+                      [(ngModel)]='productUpdate.shippingFee' />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="basic-url"><b>Url</b></label>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">https://wildorganic.in/product/</span>
+                      </div>
+                      <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name='url'
+                        [(ngModel)]='productUpdate.url'>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="Discription"><b>SKU</b></label>
+                    <input type="text" class="form-control" name='SKU' [(ngModel)]='productUpdate.SKU' />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-3">
+                    <label for="metaTagName"><b>Featured</b></label> &nbsp;&nbsp;
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <!-- <input type="radio" id="featuredyes" name="featured" class="custom-control-input" name='featured' [(ngModel)]='productUpdate.featured' [checked]="productUpdate.featured"> -->
+                      <input type="radio" id="featuredyes" name="featured" class="custom-control-input" [value]=true
+                        [(ngModel)]='productUpdate.featured' [checked]="productUpdate.featured==true">
+                      <label class="custom-control-label" for="featuredyes">Yes </label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="featuredno" name="featured" class="custom-control-input" [value]=false
+                        name='featured' [(ngModel)]='productUpdate.featured'>
+                      <label class="custom-control-label" for="featuredno">No</label>
+                    </div>
+
+
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="metaTagName"><b>Free Shipping</b></label>&nbsp;&nbsp;
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="freeshippingyes" name="freeshipping" class="custom-control-input"
+                        [value]=true name='freeShipping' [(ngModel)]='productUpdate.freeShipping'>
+                      <label class="custom-control-label" for="freeshippingyes">Yes </label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="freeshippingno" name="freeshipping" class="custom-control-input"
+                        [value]=false name='freeShipping' [(ngModel)]='productUpdate.freeShipping'>
+                      <label class="custom-control-label" for="freeshippingno">No</label>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="metaTagName"><b>Review Allowed</b></label>&nbsp;&nbsp;
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="reviewyes" name="review" class="custom-control-input" [value]=true
+                        name='reviewAllowed' [(ngModel)]='productUpdate.reviewAllowed'>
+                      <label class="custom-control-label" for="reviewyes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">&nbsp;&nbsp;
+                      <input type="radio" id="reviewno" name="review" class="custom-control-input" [value]=false
+                        name='reviewAllowed' [(ngModel)]='productUpdate.reviewAllowed'>
+                      <label class="custom-control-label" for="reviewno">No</label>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="metaTagName"><b>Need Changes </b></label>&nbsp;
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input"
+                        [value]=true name='needChanges' [(ngModel)]='productUpdate.needChanges'>
+                      <label class="custom-control-label" for="customRadioInline1">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">&nbsp;&nbsp;
+                      <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input"
+                        [value]=false name='needChanges' [(ngModel)]='productUpdate.needChanges'>
+                      <label class="custom-control-label" for="customRadioInline2">No</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label for="Name"><b>Add Variant and Price</b></label>
+                    <div>
+                      <form>
+                        <div class="form-group" *ngFor="let list of listPriceArr;index as i">
+                          <label>{{list.variantName}}</label>
+                          <label>{{list.variantprice | currency:'INR'}}</label>
+                          <button type="button" class="btn btn-danger" (click)="editVariant(list,i,productUpdate._id)"> edit </button>
+                          <button type="button" class="btn btn-danger" (click)="deleteVariant(i)">&times;</button>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Variant Name" name="variantName" [(ngModel)]="variantName" />
+                      <input type="number" class="form-control" placeholder="Variant Price" name="variantprice" [(ngModel)]="variantprice" />
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-primary" type="button" (click)="addVariant(variantName,variantprice)">Add
+                          Variant</button>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label for="Name"><b>Category</b></label>
+                    <div>
+                      <form>
+                        <div class="form-group" *ngFor="let category of setCategoryArr;index as i">
+                          <label>{{category.name}}</label>
+                          <button type="button" class="btn btn-danger" (click)="deleteCategory(i)">&times;</button>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="input-group">
+                      <select class="custom-select" name='category' [(ngModel)]='category'>
+                        <option value="">Choose A category</option>
+                        <option *ngFor="let obj of categoryArr" value="{{obj.name}}.{{obj._id}}">{{obj.name}}</option>
+                      </select>
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-primary" type="button" (click)="addCategory(category)">Add
+                          Category</button>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="form-row editor">
+
+                  <label for=""><b>Product Content Blog</b></label>
+
+                  <angular-editor name="blog" [placeholder]="'Enter text here...'" [(ngModel)]="blog"
+                    [config]="editorConfig"></angular-editor>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-12 btn2">
+                    <button class="btn btn-primary" (click)="updateProduct(productUpdate._id)"> Update Product </button>
+                  </div>
+
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="variantUpdate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" *ngIf="variantObj">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Variant For {{variantObj.variantName}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+            <input type="text" name="variantName" class="form-control" [(ngModel)]="variantName" placeholder="Variant Name"/>
+            <input type="number" name="variantprice" class="form-control" [(ngModel)]="variantprice" placeholder="Variant Price"/>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="updateVariant()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

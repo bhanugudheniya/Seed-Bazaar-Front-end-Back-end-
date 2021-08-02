@@ -1,0 +1,14 @@
+<app-adminsidebar></app-adminsidebar>
+
+
+<div class="container top">
+  <h3 for="usr" style="display: flex; justify-content: center; margin-bottom: 5%;">
+    <b>Order Status</b>
+  </h3>
+  <input type="text" class="form-control" name="Order" [(ngModel)]="Order" placeholder="Order Status" />
+  <div style="text-align: center;">
+    <button type="button" class="btn btn-primary " (click)="AddOrderStatus()" style="margin-top: 20px;">
+      Submit
+    </button>
+  </div>
+</div>

@@ -1,0 +1,347 @@
+.box {
+    width: 90%;
+}
+
+select {
+    padding: 2%;
+    border-radius: grey;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-family: 'Kumbh Sans';
+}
+
+p,
+h4 {
+    font-family: 'Kumbh Sans';
+}
+
+::ng-deep .ngxImageZoomContainer>img {
+    max-height: 500px!important;
+}
+
+.checked {
+    color: orange;
+}
+
+body {
+    font-family: "FuturaBook";
+}
+
+
+/* Product Details */
+
+.productdetailsbg {
+    background-color: #003023;
+}
+
+.add-cart-btn a {
+    background-color: #484848;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.product-price {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.product-details {
+    /* height: 550px; */
+    /* background-image: url('../../../assets/Images/product-details-header.png'); */
+    background-size: cover;
+    background-color: white;
+    background-repeat: no-repeat;
+}
+
+.product-image-gallery {
+    text-align: center;
+    background-color: white;
+}
+
+.product-image-gallery img {
+    margin-top: 8%;
+}
+
+.image {
+    text-align: center;
+}
+
+.product-details-title h1 {
+    font-family: 'Kumbh Sans';
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.product-details-title h4 {
+    font-family: 'Kumbh Sans';
+    font-size: 18px;
+}
+
+.product-details-title h2 {
+    font-size: 30px;
+}
+
+.product-quantity input {
+    width: 30%;
+    padding: 5px 5px;
+    border-radius: 10px;
+    border: 0.5px solid grey;
+    /* border-style: none; */
+}
+
+.product-quantity input:focus,
+.product-quantity input:active {
+    outline: none;
+}
+
+
+/* .product-main-image {
+     padding-bottom: -350px; 
+} */
+
+
+/* .triangle-bg {
+  height: 300px;
+  background-image: url(../../../assets/Images/triangle.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  margin-top: 20%;
+  right: 0px;
+} */
+
+.customer-reviews {
+    background-color: rgb(218, 218, 218);
+    width: 100%;
+}
+
+.reviews-wrapper {
+    padding: 10%;
+    background-color: rgba(24, 51, 31, 0.1);
+    border-radius: 10px;
+}
+
+.relative-product {
+    background-color: #ebffd9;
+}
+
+.left-nav {
+    flex: 0.1;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    left: 5%;
+    z-index: 1000;
+}
+
+.right-nav {
+    flex: 0.1;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    left: 90%;
+    z-index: 1000;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 760px) {
+    .overallContainer {
+        overflow-x: hidden !important;
+    }
+     ::ng-deep .ngxImageZoomContainer>img {
+        max-height: 250px!important;
+    }
+    /* .image {
+    position: relative;
+    bottom: 100%;
+    z-index: 2;
+    text-align: center;
+  } */
+    .product-image-gallery img {
+        margin-top: 5%;
+    }
+    .product-image-gallery {
+        position: relative;
+        top: 10%;
+        /* height: 230px; */
+        margin-bottom: 5%;
+    }
+    .add-cart {
+        position: relative;
+        /* bottom: 120%; */
+        text-align: center;
+        top: 5% !important;
+        padding-top: 10%;
+    }
+    .btnStyle {
+        display: block !important;
+        width: 100%;
+        border-bottom: 1px solid black;
+        z-index: 50;
+    }
+    .descriptionSection {
+        /* margin-top: 20px; */
+    }
+    .product-main-image {
+        height: 70% !important;
+        width: 70% !important;
+        overflow: hidden !important;
+        margin: 0px !important;
+        padding: 0px !important;
+    }
+    .left-nav {
+        flex: 0.1;
+        position: absolute;
+        top: 50%;
+        bottom: 50%;
+        left: 1%;
+    }
+    .right-nav {
+        flex: 0.1;
+        position: absolute;
+        top: 50%;
+        bottom: 50%;
+        right: 1%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .customer-reviews {
+        margin-top: 100%;
+        background-color: #ebffd9;
+    }
+    .image {
+        position: relative;
+        /* bottom: 100%; */
+        z-index: 4;
+    }
+    .product-image-gallery {
+        position: relative;
+        top: 100%;
+        height: 230px;
+    }
+    .add-cart {
+        position: relative;
+        /* bottom: 120%; */
+        text-align: center;
+    }
+    .relative-product {
+        position: relative;
+        top: 20%;
+    }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1366px) {
+     ::ng-deep .ngxImageZoomContainer>img {
+        min-height: 550px!important;
+    }
+    .gallery {
+        /* min-height: 380px; */
+    }
+    .zoomimagecontainer {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        /* background-color: blue !important; */
+        /* top: 20%; */
+        /* height: 150px !important; */
+    }
+    .customer-reviews {
+        margin: 0%;
+        padding: 0%;
+    }
+    .image {
+        position: relative;
+        top: 5%;
+        z-index: 4;
+    }
+    .product-image-gallery {
+        position: relative;
+        top: 5%;
+        /* height: 450px; */
+    }
+    .add-cart {
+        position: relative;
+        top: 20%;
+        /* bottom: 35%; */
+        text-align: center;
+    }
+    .left-nav {
+        flex: 0.1;
+        position: absolute;
+        top: 50%;
+        bottom: 50%;
+        left: 5%;
+        z-index: 1000;
+    }
+    .right-nav {
+        flex: 0.1;
+        position: absolute;
+        top: 50%;
+        bottom: 50%;
+        left: 90%;
+        z-index: 1000;
+    }
+}
+
+@media only screen and (min-width: 1367px) {
+    .left-nav {
+        flex: 0.1;
+        position: absolute;
+        top: 50%;
+        bottom: 50%;
+        left: 5%;
+        z-index: 1000;
+    }
+    .right-nav {
+        flex: 0.1;
+        position: absolute;
+        top: 50%;
+        bottom: 50%;
+        left: 90%;
+        z-index: 1000;
+    }
+     ::ng-deep .ngxImageZoomContainer>img {
+        min-height: 550px!important;
+    }
+    .zoomimagecontainer {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        /* background-color: blue !important; */
+        /* top: 20%; */
+        /* height: 150px !important; */
+    }
+    .image {
+        position: relative;
+        top: 5%;
+        z-index: 4;
+    }
+}
+
+
+/* CART CHANGE NEW */
+
+.instock {
+    color: green;
+    font-size: 24px;
+}
+
+.outofstock {
+    color: red;
+    font-size: 24px;
+}
+
+.product-category-status p {
+    display: inline-block;
+}
+
+.borderdiv {
+    border-radius: 20px;
+    /* margin-top: 200px; */
+}
+
+.seperator {
+    /* border-left: 1px solid rgba(128, 128, 128, 0.326); */
+    height: 550px;
+}

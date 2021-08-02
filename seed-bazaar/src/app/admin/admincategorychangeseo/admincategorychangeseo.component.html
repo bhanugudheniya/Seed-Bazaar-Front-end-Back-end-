@@ -1,0 +1,39 @@
+
+<app-adminsidebar></app-adminsidebar>
+<div class="container mt-3">
+<div class="row">
+    <div class="col-lg-12 col-md-12">
+      <h2 style="text-align: center;"> View All CATEGORIES</h2>
+      <input type="text" name="search" [(ngModel)]="search" placeholder="search">
+
+      <div class="table-responsive">
+
+        <table class="table table-hover ">
+          <thead>
+            <tr>
+              <th scope="col">S.No</th>
+              <th scope="col" (click)="setOrder('name')">Name<span *ngIf="reverse==true">&uarr;</span>
+                <span *ngIf="reverse==false">&darr;</span></th>
+              <th scope="col">Description</th>
+              <th scope="col">url</th>
+              <th scope="col">Parent Category</th>
+              <th scope="col">Change Seo</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let obj of (categoryArr | orderBy: order:reverse  | filter:search) ; index as i  ">
+
+              <th scope="row">{{i+1}}</th>
+              <td>{{obj.name}}</td>
+              <td>{{obj.description}}</td>
+              <td>{{obj.url}}</td>
+              <td>{{obj.parentCategory}}</td>
+              <td>
+                <button type="button" class="btn btn-success" routerLink="/admin/category/seo/{{obj.url}}">Change Seo </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

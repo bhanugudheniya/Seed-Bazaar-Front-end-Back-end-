@@ -1,0 +1,55 @@
+
+.regular-font
+{
+    font-family: 'FuturaBook';
+}
+
+.medium-font
+{
+    font-family: 'FuturaMedium';
+}
+
+.heavy-font
+{
+    font-family: 'FuturaHeavy';
+}
+
+
+body
+{
+    font-family: 'FuturaBook';
+}
+
+
+/* Store Locator */
+.store-locator
+{
+    background-color: #EBFFD9;
+}
+.storelocatorbg
+{
+    height: 550px;
+    background-image: url('../../../assets/Images/store-locator-header.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.location-card
+{
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(95, 131, 64, 0.30);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(95, 131, 64, 0.30);
+    box-shadow: 0px 0px 15px 0px rgba(95, 131, 64, 0.30);
+    border-radius: 10px;
+}
+
+.location-card:hover
+{
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(95, 131, 64, 0.75);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(95, 131, 64, 0.75);
+    box-shadow: 0px 0px 15px 0px rgba(95, 131, 64, 0.75);
+    border-radius: 10px;
+}
+.img-fluid
+{
+    width: 100%;
+}

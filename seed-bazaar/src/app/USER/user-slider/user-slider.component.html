@@ -1,0 +1,22 @@
+<div class="sliderContainer">
+  <div class="sliderImageContainer" id="imagePos">
+    <div class="images" *ngFor="let el of bannerArr">
+      <img [src]="setImageURl(el.image)" height="100%" width="100%" />
+    </div>
+  </div>
+</div>
+<div
+  class="row d-flex justify-content-center dotPosition"
+  style="margin: 0px; padding: 0px"
+>
+  <div class="col-12 d-flex justify-content-center">
+    <div class="dotcontainer">
+      <div
+        class="dots"
+        *ngFor="let el of bannerArr; index as j"
+        [class.active]="j == i"
+        (click)="slideToPos(j)"
+      ></div>
+    </div>
+  </div>
+</div>

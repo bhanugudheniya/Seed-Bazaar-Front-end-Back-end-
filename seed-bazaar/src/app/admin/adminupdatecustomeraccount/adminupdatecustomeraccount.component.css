@@ -1,0 +1,38 @@
+.container h1
+{
+  text-align: center;
+}
+.form-row
+{
+  position: relative;
+  top: 30px;
+  left: 90px;
+  right: 90px;
+}
+.button
+{
+  text-align: center;
+}
+.button-1
+{
+  position: relative;
+  top: 40px;
+  height: 45px;
+  width: 300px;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+  font-size: 20px;
+}
+.button-2
+{
+  position: relative;
+  top: 40px;
+  left: 20px;
+  height: 45px;
+  width: 300px;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+  background-color: darkred;
+}

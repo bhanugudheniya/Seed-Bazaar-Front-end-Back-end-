@@ -1,0 +1,205 @@
+<!-- <app-user-all-page-header></app-user-all-page-header> -->
+<!-- <app-userheader></app-userheader> -->
+<app-plainheader></app-plainheader>
+
+
+<!-- <div class="container-fluid bg ">
+    <div class="row">
+      <div class=" col-md-4  col-lg-4 col-sm-12 "></div>
+      <div class="col-md-4 col-lg-4 col-sm-12 ">
+        FORM START
+        <form class="form-container">
+          <h2 style="text-align: center;"><b style="color:#eee">Customer Login</b> </h2>
+          <div class="form-group">
+            <label for="exampleInputEmail1"><b style="color:#eee">Email</b>
+            </label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="Enter email"  name="email" [(ngModel)]="email"/>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1"><b style="color:#eee;">Password</b></label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" [(ngModel)]="password"/>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" style="margin-top: 10px; position: relative;" (click)="login()">
+            Submit
+          </button>
+        </form>
+        FORM END
+      </div>
+      <div class="col-md-4 col-lg-4 col-sm-12"></div>
+    </div>
+  </div> -->
+
+<section class="pt-3 pb-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mb-5">
+        <h3>Login</h3>
+        <hr />
+        <form class="login-form">
+          <div class="input-group pb-4">
+            <span class="input-group-addon"
+              ><i class="glyphicon glyphicon-user"></i
+            ></span>
+            <input
+              id="user-email"
+              type="text"
+              [(ngModel)]="useremail"
+              class="form-control"
+              name="useremail"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div class="input-group pb-4">
+            <span class="input-group-addon"
+              ><i class="glyphicon glyphicon-lock"></i
+            ></span>
+            <input
+              id="user-password"
+              [(ngModel)]="userpassword"
+              type="password"
+              class="form-control"
+              name="userpassword"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div class="input-group pb-4">
+            <small>
+              <a routerLink="/forgotPassword">Forgot Password</a>
+            </small>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-default button"
+            (click)="login()"
+          >
+            Sign In
+          </button>
+          <!-- <div class="form-check pt-2">
+                        <input type="checkbox" class="form-check-input" id="keepsigned">
+                        <label class="form-check-label" for="keepsigned">Keep Me Signed In</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="forgotpassword">
+                        <label class="form-check-label" for="forgotpassword">Forgot your Password</label>
+                    </div> -->
+        </form>
+      </div>
+      <div class="col-md-6">
+        <h3>Register</h3>
+        <hr />
+        <form class="register-form">
+          <div class="input-group pb-4">
+            <span class="input-group-addon"
+              ><i class="glyphicon glyphicon-user"></i
+            ></span>
+            <input
+              id="user-name"
+              type="text"
+              class="form-control"
+              name="firstname"
+              [(ngModel)]="firstname"
+              placeholder="First Name"
+              required
+            />
+          </div>
+          <div class="input-group pb-4">
+            <span class="input-group-addon"
+              ><i class="glyphicon glyphicon-user"></i
+            ></span>
+            <input
+              id="user-name"
+              type="text"
+              class="form-control"
+              name="lastname"
+              [(ngModel)]="lastname"
+              placeholder="Last Name"
+              required
+            />
+          </div>
+          <div class="input-group pb-4">
+            <span class="input-group-addon"
+              ><i class="glyphicon glyphicon-user"></i
+            ></span>
+            <input
+              id="user-email"
+              type="text"
+              class="form-control"
+              name="email"
+              [(ngModel)]="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div class="input-group pb-4">
+            <span class="input-group-addon"
+              ><i class="glyphicon glyphicon-user"></i
+            ></span>
+            <input
+              id="user-phone"
+              type="tel"
+              class="form-control"
+              name="phone"
+              [(ngModel)]="phone"
+              placeholder="Phone"
+              required
+            />
+          </div>
+          <div class="input-group pb-4">
+            <span class="input-group-addon"
+              ><i class="glyphicon glyphicon-lock"></i
+            ></span>
+            <input
+              id="user-password"
+              type="password"
+              class="form-control"
+              [(ngModel)]="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div class="input-group pb-4">
+            <span class="input-group-addon"
+              ><i class="glyphicon glyphicon-lock"></i
+            ></span>
+            <input
+              id="repassword"
+              type="password"
+              class="form-control"
+              name="repassword"
+              [(ngModel)]="repassword"
+              placeholder="Re-Type Password"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1"
+              ><b style="color: black">Referal Code if any</b></label
+            >
+            <input
+              type="text"
+              class="form-control"
+              placeholder="code"
+              name="referalCode"
+              [(ngModel)]="referalCode"
+            />
+          </div>
+          <button
+            type="submit"
+            class="btn btn-default button"
+            (click)="userRegister()"
+          >
+            Sign Up
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <app-user-letter></app-user-letter> -->
+<app-user-foooter></app-user-foooter>

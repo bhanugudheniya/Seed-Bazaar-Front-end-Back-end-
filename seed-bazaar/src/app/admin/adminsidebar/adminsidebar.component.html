@@ -1,0 +1,251 @@
+<!-- <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Wild Organic</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item dropdown">
+
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Category
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="/admin/category/add" routerLinkActive="active">Add Category</a>
+          <a class="dropdown-item" routerLink="/admin/category/view" routerLinkActive="active">View all Categories</a>
+          <a class="dropdown-item" routerLink="/admin/category/active" routerLinkActive="active">Set categories as
+            active and inactive</a>
+          <a class="dropdown-item" routerLink="/admin/category/seo" routerLinkActive="active">Set Categoires Seo options
+          </a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">Products</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="/admin/product/add" routerLinkActive="active">Add Products</a>
+          <a class="dropdown-item" routerLink="/admin/product/view" routerLinkActive="active">View Products</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">Blog</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="/admin/blog/add" routerLinkActive="active">Add Blog</a>
+          <a class="dropdown-item" routerLink="/admin/blog/view" routerLinkActive="active">Manage Blog</a>
+        </div>
+      </li>
+      <li class="nav-item"> <a class="nav-link" routerLink="/admin/view" routerLinkActive="active"> View Admins </a>
+      </li>
+    </ul>
+
+    <form class="form-inline my-2 my-lg-0">
+      <button class="btn btn-danger" (click)="logout()">Logout</button>
+    </form>
+  </div>
+</nav> -->
+
+<div class="tkf-hamburger" (click)="setSidebarToggle(1)">
+  <div class="tkf-hamburger-bars"></div>
+  <div class="tkf-hamburger-bars" style="width: 25px;"></div>
+  <div class="tkf-hamburger-bars"></div>
+</div>
+
+<div class="tkf-sidebar" [class.tkf-sidebar-active]="sidebarToggle==1">
+  <ul class="tkf-nav-container">
+    <li class="tkf-brand">
+      <span class="brandName">
+        Nature's Superfood
+      </span>
+      <span class="close" (click)="setSidebarToggle(0)">&times;</span>
+      <hr class="hrSideBar">
+    </li>
+
+    <li class="tkf-navitem tkf-dropdown tkf-active">
+      <label for="dropdown1" class="tkf-dropdown-label">
+        Manage Category
+        <i class="fas fa-angle-down ml-3 pt-1"></i>
+      </label>
+      <input type="checkbox" id="dropdown1" class="tkf-drop-check">
+      <div class="tkf-dropdown-items ">
+        <div class="tkf-drop-items" routerLink="/admin/category/add" routerLinkActive="tkf-active">
+          Manage Category
+        </div>
+        <!-- <div class="tkf-drop-items" routerLink="/admin/category/view" routerLinkActive="tkf-active">
+          View Category
+        </div> -->
+        <div class="tkf-drop-items" routerLink="/admin/category/active" routerLinkActive="tkf-active">
+          Category Set Active
+        </div>
+        <div class="tkf-drop-items" routerLink="/admin/category/seo" routerLinkActive="tkf-active">
+          Set Seo Options Category
+        </div>
+      </div>
+
+    </li>
+    <li class="tkf-navitem tkf-dropdown tkf-active">
+      <label for="dropdown2" class="tkf-dropdown-label">
+        Manage Product
+        <i class="fas fa-angle-down ml-3 pt-1"></i>
+      </label>
+      <input type="checkbox" id="dropdown2" class="tkf-drop-check">
+      <div class="tkf-dropdown-items">
+        <!-- <div class="tkf-drop-items" routerLink="/admin/product/add" routerLinkActive="tkf-active">
+          Manage Product
+        </div> -->
+        <!-- <div class="tkf-drop-items" routerLink="/admin/product/view" routerLinkActive="tkf-active">
+          View Product
+        </div> -->
+        <div class="tkf-drop-items" routerLink="/admin/product/active" routerLinkActive="tkf-active">
+          Product Set Active
+        </div>
+        <div class="tkf-drop-items" routerLink="/admin/product/seo" routerLinkActive="tkf-active">
+          Set Seo Options Product
+        </div>
+      </div>
+
+    </li>
+    <li class="tkf-navitem tkf-dropdown tkf-active">
+      <label for="dropdown3" class="tkf-dropdown-label">
+        Manage Blog
+        <i class="fas fa-angle-down ml-3 pt-1"></i>
+      </label>
+      <input type="checkbox" id="dropdown3" class="tkf-drop-check">
+      <div class="tkf-dropdown-items">
+        <div class="tkf-drop-items" routerLink="/admin/blog/add" routerLinkActive="tkf-active">
+          Add BLog
+        </div>
+        <div class="tkf-drop-items" routerLink="/admin/blog/view" routerLinkActive="tkf-active">
+          Manage Blog
+        </div>
+      </div>
+
+    </li>
+    <!-- <li class="tkf-navitem tkf-dropdown tkf-active">
+      <label for="dropdown4" class="tkf-dropdown-label">
+        Content Pages
+        <span> &#9660;</span>
+      </label>
+      <input type="checkbox" id="dropdown4" class="tkf-drop-check">
+      <div class="tkf-dropdown-items">
+        <div class="tkf-drop-items" routerLink="/admin/content/add" routerLinkActive="tkf-active">
+          Add Content Page
+        </div>
+        <div class="tkf-drop-items" routerLink="/admin/content/view" routerLinkActive="tkf-active">
+          Manage Content
+        </div>
+        <div class="tkf-drop-items" routerLink="/admin/content/active" routerLinkActive="tkf-active">
+          Content Set Active
+        </div>
+        <div class="tkf-drop-items" routerLink="/admin/content/seo" routerLinkActive="tkf-active">
+          Set Seo Options Content
+        </div>
+      </div>
+
+    </li> -->
+    <li class="tkf-navitem tkf-dropdown tkf-active">
+      <label for="dropdown5" class="tkf-dropdown-label"  routerLink="/admin/discountcode/view">
+        Manage Discount code<!-- <i class="fas fa-angle-down ml-3 pt-1"></i> -->
+        
+      </label>
+      <!-- <input type="checkbox" id="dropdown5" class="tkf-drop-check">
+      <div class="tkf-dropdown-items">
+        <div class="tkf-drop-items" routerLink="/admin/discountcode/create" routerLinkActive="tkf-active">
+          Add Discount code
+        </div>
+        <div class="tkf-drop-items" routerLink="/admin/discountcode/view" routerLinkActive="tkf-active">
+          View All Discount code
+        </div>
+      </div> -->
+
+    </li>
+    <li class="tkf-navitem tkf-dropdown tkf-active">
+      <label for="dropdown6" class="tkf-dropdown-label">
+        Manage Customers
+        <i class="fas fa-angle-down ml-3 pt-1"></i>
+      </label>
+      <input type="checkbox" id="dropdown6" class="tkf-drop-check">
+      <div class="tkf-dropdown-items">
+        <div class="tkf-drop-items" routerLink="/admin/customer/view" routerLinkActive="tkf-active">
+          Manage Customers
+        </div>
+        <!-- <div class="tkf-drop-items" routerLink="/admin/discountcode/view" routerLinkActive="tkf-active">
+          View All Discount code
+        </div> -->
+      </div>
+
+    </li>
+    <li class="tkf-navitem tkf-dropdown tkf-active">
+      <label for="dropdown7" class="tkf-dropdown-label">
+        Manage Orders
+        <i class="fas fa-angle-down ml-3 pt-1"></i>
+      </label>
+      <input type="checkbox" id="dropdown7" class="tkf-drop-check">
+      <div class="tkf-dropdown-items">
+        <div class="tkf-drop-items" routerLink="/admin/orders/viewdetails" routerLinkActive="tkf-active">
+          View Orders
+        </div>
+        <div class="tkf-drop-items" routerLink="/admin/OrderStatus" routerLinkActive="tkf-active">
+          Add order Status
+        </div>
+        <div class="tkf-drop-items" routerLink="/admin/OrderStatus/view" routerLinkActive="tkf-active">
+          View order Status
+        </div>
+        <!-- <div class="tkf-drop-items" routerLink="/admin/discountcode/view" routerLinkActive="tkf-active">
+          View All Discount code
+        </div> -->
+      </div>
+
+    </li>
+    <!-- <li class="tkf-navitem tkf-active" routerLink="/admin/addHomePageBanner" routerLinkActive="tkf-active">
+      Add Banner Images
+    </li> -->
+
+    <li class="tkf-navitem tkf-dropdown tkf-active" routerLink="/admin/view" routerLinkActive="tkf-active">
+      <label for="" class="tkf-dropdown-label">
+        View Admins</label>
+    </li>
+    <li class="tkf-navitem tkf-active" routerLink="/admin/stock/manage" routerLinkActive="tkf-active">
+      <label for="" class="tkf-dropdown-label">
+        Stock Manage
+      </label>
+    </li>
+    <li class="tkf-navitem tkf-active" routerLink="/admin/contact/view" routerLinkActive="tkf-active">
+      <label for="" class="tkf-dropdown-label">
+        Contact Us Form
+      </label>
+    </li>
+    <!-- <li class="tkf-navitem tkf-active" routerLink="/admin/businesscontact/view" routerLinkActive="tkf-active">
+      Business Contact Us Form
+    </li> -->
+    <li class="tkf-navitem tkf-active" routerLink="/admin/dashboard" routerLinkActive="tkf-active">
+      <label for="" class="tkf-dropdown-label">
+        Reporting Dashboard
+      </label>
+    </li>
+    <!-- <li class="tkf-navitem tkf-active" routerLink="/admin/newsletter/view" routerLinkActive="tkf-active">
+      Newsletter
+    </li> -->
+    <!-- <li class="tkf-navitem tkf-active" (click)="openTab()" routerLinkActive="tkf-active">
+      Google Analytics
+    </li> -->
+    <li class="tkf-navitem tkf-active" routerLink="/admin/addHomePageBanner" routerLinkActive="tkf-active">
+      <label for="" class="tkf-dropdown-label">
+        Desktop Banner Image</label>
+    </li>
+    <li class="tkf-navitem tkf-active" routerLink="/admin/addMobileHomePageBanner" routerLinkActive="tkf-active">
+      <label for="" class="tkf-dropdown-label">
+        Mobile Banner Image</label>
+    </li>
+
+    <li class="tkf-navitem tkf-active text-center" style="background-color: rgb(192, 39, 39); color: bisque !important;"
+      (click)="logout()">
+      Logout
+    </li>
+  </ul>
+
+</div>

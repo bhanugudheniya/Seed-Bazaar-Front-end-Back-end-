@@ -1,0 +1,36 @@
+<app-adminsidebar></app-adminsidebar>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-5">
+            <form [formGroup]="stateForm" (ngSubmit)="handleSubmit()">
+                <div class="form-group">
+                    <label for="">Enter name</label>
+                    <input type="text" formControlName="name" placeholder="stateName">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <!-- <th scope="col">Handle</th> -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let el of stateArr;index as i">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{el.name}}</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>

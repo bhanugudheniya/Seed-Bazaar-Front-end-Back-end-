@@ -1,0 +1,48 @@
+.container
+{
+  height: 100px;
+}
+.container h1
+{
+  text-align: center;
+}
+.table
+{
+  background-color: whitesmoke;
+}
+.table-1
+{
+  height: 50px;
+  width: 100%;
+  border: 1px solid black;
+}
+.row-1
+{
+  border: 1px solid black;
+  width: 30%;
+  text-align: center;
+}
+.row-2
+{
+  border: 1px solid black;
+  width: 70%;
+  padding-left: 20px;
+}
+.table-2
+{
+  height: 50px;
+  width: 100%;
+  border: 1px solid black;
+}
+.row-3
+{
+  border: 1px solid black;
+  width: 30%;
+  text-align: center;
+}
+.row-4
+{
+  border: 1px solid black;
+  width: 70%;
+  padding-left: 20px;
+}

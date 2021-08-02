@@ -1,0 +1,55 @@
+<app-adminsidebar></app-adminsidebar>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 mt-5">
+            <h2 style="text-align: center;">Create Discount Code</h2>
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="Name"><b>Discount code Name</b></label>
+                        <input type="text" class="form-control" name="name" [(ngModel)]="name" />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="Name"><b>Discount code </b></label>
+                        <input type="text" class="form-control" name="code" [(ngModel)]="code" />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="Discription"><b>Discount code Value</b></label>
+                        <input type="text" class="form-control" name="value" [(ngModel)]="value" />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <select [(ngModel)]="type" name="type">
+                            <option value="1">Percentage Off</option>
+                            <option value="2">Amount Off</option>
+                            <option value="3">Set price</option>
+                        </select>
+                   </div>
+                    <div class="form-group col-md-6">
+                        <label for="Discription"><b>Product Name</b></label>
+                        <select class="form-control" name="productName" [(ngModel)]="productName">
+                            <option *ngFor="let obj of productArr">{{obj.name}}</option>
+                        </select>
+                        <input type="text" class="form-control"  />
+                    </div>
+
+
+                    <div class="form-group col-md-6">
+                        <label for="Discription"><b>Date valid from</b></label>
+                        <input type="date" class="form-control" name="validFrom" [(ngModel)]="validFrom" />
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="Discription"><b>Date valid till</b></label>
+                        <input type="date" class="form-control" name="validTill" [(ngModel)]="validTill" />
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-12 col-8 d-flex justify-content-center">
+                        <button type="button" class="btn btn-success" (click)="discountadd()">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

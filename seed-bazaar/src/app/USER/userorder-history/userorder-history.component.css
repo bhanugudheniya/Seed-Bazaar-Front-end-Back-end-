@@ -1,0 +1,216 @@
+
+/* Checkout Page */
+.checkoutbg
+{
+    height: 550px;
+    background-image: url('../../../assets/Images/checkout-header.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* My Account Page */
+.myaccountbg
+{
+    height: 550px;
+    background-image: url('../../../assets/Images/my-account-header.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.name-box, .user-dashboard-navigation
+{
+    background-color: darkslategray;
+    /* background: rgb(11,95,49);
+    background: radial-gradient(circle, rgba(11,95,49,1) 0%, rgba(2,48,35,1) 100%); */
+    border-radius: 10px;
+}
+
+.active-account-tab
+{
+    background-color: rgb(13, 110, 74);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#first-name, #last-name, #user-email, #user-phone
+{    
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: #cee0bf;
+    padding: 3px 10px;
+}
+
+.user-details h5
+{
+    color: rgb(2,48,35);
+}
+
+.user-details a
+{
+    text-decoration: none;
+    color: rgb(11,95,49);
+}
+
+#user-name, #user-phone, #user-pincode, #user-email, #user-address, #user-city, #user-state, #user-landmark, #user-locality, #user-password, #repassword
+{    
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: #cee0bf;
+    padding: 3px 10px;
+}
+
+.user-details button
+{
+    background-color: rgb(2,48,35);
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 15px;
+}
+
+/* Login/SignUp */
+.loginbg
+{
+    height: 550px;
+    background-image: url('../../../assets/Images/login-header.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.login-form button, .register-form button
+{
+    background-color: rgb(2,48,35);
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 15px;
+}
+
+.single-order-card
+{
+    background-color: darkslategray;
+    padding: 10px 15px 30px 25px;
+    border-left: solid 5px;
+}
+
+.order-status
+{
+    padding-bottom: 5px;
+}
+
+.order-display
+{
+    background-color: #ebffd9;
+    border-radius: 10px;
+}
+
+.track-order-btn button
+{
+    background-color: rgb(2,48,35);
+    padding: 5px 15px;
+    border-radius: 15px;
+    border: none;
+}
+
+.track-order-btn button a
+{
+    color: #fff;
+    text-decoration: none;
+    border: none;
+}
+
+.buy-again-btn button
+{
+    padding: 5px 15px;
+    border-radius: 15px;
+    border: 1px solid rgb(2,48,35);
+
+}
+
+.buy-again-btn span
+{
+    /* color: #9ea0a3; */
+    color: #105431;
+    text-decoration: none;
+}
+.order-details-btn button
+{
+    background-color: #ebffd9;
+    padding: 5px 15px;
+    border-radius: 15px;
+    border: none;
+}
+
+.order-details-btn a
+{
+    color: #9ea0a3;
+    text-decoration: none;
+}
+
+.get-invoice-btn a
+{
+    color: #092617;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+ul.timeline {
+    list-style-type: none;
+    position: relative;
+}
+ul.timeline:before {
+    content: ' ';
+    background: rgb(2,48,35);
+    display: inline-block;
+    position: absolute;
+    left: 30px;
+    width: 5px;
+    height: 100%;
+    z-index: 400;
+}
+ul.timeline > li {
+    margin: 20px 0;
+    padding-left: 50px;
+    padding-bottom: 50px;
+}
+
+ul.timeline > li:last-child
+{
+    padding-bottom: 0px;
+}
+
+ul.timeline > li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 5px solid rgb(2,48,35);
+    left: 20px;
+    width: 25px;
+    height: 25px;
+    z-index: 400;
+}
+
+ul.timeline > .done:before {
+    background: rgb(2,48,35);
+}
+
+.order-subtotal
+{
+    font-size: 20px;
+}
+
+.order-details-card, .shipping-address-card
+{
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+}
+
+.order-details-card hr
+{
+    border: solid 1px rgb(2,48,35);
+}
+

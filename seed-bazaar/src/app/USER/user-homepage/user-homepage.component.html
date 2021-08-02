@@ -1,0 +1,379 @@
+<app-plainheader></app-plainheader>
+<app-user-slider></app-user-slider>
+<!-- <section class="intro">
+    <div class="overlay">
+        <div class="container-fluid">
+
+
+            <div class="row d-flex justify-content-center align-items-center"
+                style="margin:0px !important;width: 100vw !important; padding:0px !important;">
+                <div class="col-lg-6">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-10 col-11">
+                            <div class="intro-heading" style="text-align: center;">
+                                <h1>Welcome To Nature's SuperFood</h1>
+                            </div>
+                            <div class="intro-detail" style="text-align: center !important;">
+                                <p class="text-justify text-secondary pt-4">
+                                    Nature's SuperFood is a platform to provide all daily need items through online
+                                    delivery system and follow simple health mantra.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row d-flex justify-content-center mt-4">
+                            <div class=" col-lg-10 col-11">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="../../../assets/Images/intro-image-1.png" class="img-fluid img-height"
+                        alt="Responsive image" style="height:550px; width: 100vw;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<div class="box mb-5">
+  <div class="col-lg-2 col-md-6 col-sm-6 d-none d-none d-lg-block">
+    <div class="card" style="border-color: #ffffff">
+      <img
+        src="../../../assets/homeCard/Screenshot (46).png"
+        class="card-img-top"
+        style="height: 200px; border-radius: 15px"
+      />
+    </div>
+  </div>
+  <div class="col-lg-2 col-md-6 col-sm-6 d-none d-none d-lg-block">
+    <div class="card" style="border-color: #ffffff">
+      <img
+        src="../../../assets/homeCard/Screenshot (47).png"
+        class="card-img-top"
+        style="height: 200px; border-radius: 15px"
+      />
+    </div>
+  </div>
+  <div class="col-lg-2 col-md-6 col-sm-6 d-none d-none d-lg-block">
+    <div class="card" style="border-color: #ffffff">
+      <img
+        src="../../../assets/homeCard/Screenshot (48).png"
+        class="card-img-top"
+        style="height: 200px; border-radius: 15px"
+      />
+    </div>
+  </div>
+  <div class="col-lg-2 col-md-6 col-sm-6 d-none d-none d-lg-block">
+    <div class="card" style="border-color: #ffffff">
+      <img
+        src="../../../assets/homeCard/Screenshot (49).png"
+        class="card-img-top"
+        style="height: 200px; border-radius: 15px"
+      />
+    </div>
+  </div>
+</div>
+
+<section class="our-special-products">
+  <section class="row d-flex justify-content-center">
+    <div class="row">
+      <div class="sliderHeading">Proudly presented by</div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="sliderText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum voluptate
+        vel laboriosam asperiores rerum corrupti suscipit eos cum.
+      </div>
+    </div>
+
+    <img
+      draggable="false"
+      src="../../../assets/newuiimages/sliderFirstImage.png"
+      alt=""
+      class="imagesize"
+    />
+  </section>
+
+  <div class="overlay">
+    <div class="our-special-heading text-center">
+      <img
+        src="assets/new-product.png"
+        style="height: 60px; width: 60px"
+        alt=""
+      />
+      <h1 class="screen" style="color: rgb(80, 79, 79)">Latest Products</h1>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-secondary text-center mt-5 mb-5">
+        All Grocery Items Just a Single Click Away
+      </div>
+    </div>
+    <div class="box mx-auto">
+      <div
+        class="row d-flex justify-content-center justify-content-lg-around"
+        *ngIf="!loading"
+      >
+        <div
+          class="col-md-3 col-lg-12 mx-3 col-11 mt-2 mb-2"
+          *ngFor="let obj of productsArr"
+        >
+          <div
+            class="cards"
+            *ngIf="obj.featured == true"
+            routerLink="/product/{{ obj.url }}"
+            style="cursor: pointer"
+          >
+            <div
+              class="row pt-2 d-flex justify-content-center"
+              style="position: relative"
+            >
+              <img
+                src="{{ imgurl }}/uploads/{{ obj.filePath }}"
+                alt=""
+                class="col-11 cardimage"
+              />
+              <div class="brandName">Lotte</div>
+            </div>
+            <div class="row mt-4 d-flex justify-content-center">
+              <div class="col-11">
+                <div class="productName">
+                  {{ obj.name }}
+                </div>
+                <div class="productDescription">(Approx 400g)</div>
+                <div class="row d-flex justify-content-between my-3">
+                  <div class="col-5 priceValue">
+                    &#x20B9;
+
+                    <span *ngIf="obj.listPrice[0]">{{
+                      obj.listPrice[0].variantprice | currency: "INR"
+                    }}</span>
+                  </div>
+                  <div class="col-5 d-flex justify-content-end">
+                    <i
+                      class="fa fa-star"
+                      [class.checked]="
+                        obj.rating == 1 ||
+                        obj.rating == 2 ||
+                        obj.rating == 3 ||
+                        obj.rating == 4 ||
+                        obj.rating == 5
+                      "
+                    ></i>
+                    <i
+                      class="fa fa-star"
+                      [class.checked]="
+                        obj.rating == 2 ||
+                        obj.rating == 3 ||
+                        obj.rating == 4 ||
+                        obj.rating == 5
+                      "
+                    ></i>
+                    <i
+                      class="fa fa-star"
+                      [class.checked]="
+                        obj.rating == 3 || obj.rating == 4 || obj.rating == 5
+                      "
+                    ></i>
+                    <i
+                      class="fa fa-star"
+                      [class.checked]="obj.rating == 4 || obj.rating == 5"
+                    ></i>
+                    <i class="fa fa-star" [class.checked]="obj.rating == 5"></i>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="addtocartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add to Cart
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row d-flex justify-content-center" *ngIf="loading">
+        <app-loading></app-loading>
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-3 text-center" style="padding: 55px 0px">
+        <a routerLink="/category"
+          ><span class="view-more-btn">View More</span></a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <section>
+  <div class="container mx-auto">
+    <div class="row d-flex justify-content-center">
+      <div class="col-6">
+        <div class="row">
+          <img
+            src="../../../assets/img/brush-sale-banner-vector-260nw-1090866878.webp"
+            style="height: 280px; width: 620px"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="row">
+          <img
+            src="../../../assets/img/brush-sale-banner-vector-260nw-1090866878.webp"
+            style="height: 280px; width: 620px"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- <section>
+  <div class="container mx-auto">
+    <div class="row d-flex justify-content-around">
+      <div class="col-lg-3 col-12 mb-3 mt-2">
+        <div
+          class="card d-flex justify-content-center"
+          style="width: 18rem; border: 0px !important"
+        >
+          <img
+            class="card-img-top"
+            style="border-top-left-radius: 25px; border-top-right-radius: 25px"
+            src="../../../assets/Cards/Mask Group 6@2x.png"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h3 class="card-title text-center my-3">Blog Post One</h3>
+            <p class="card-text text-center my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+              voluptate vel laboriosam asperiores rerum corrupti suscipit eos
+              cum.
+            </p>
+            <p class="card-text text-center mt-3">Read More</p>
+            <div class="row d-flex justify-content-center mb-3">
+              <hr style="border-bottom: 3px solid #00dbd0; width: 25px" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-12 mb-3 mt-2">
+        <div
+          class="card d-flex justify-content-center"
+          style="width: 18rem; border: 0px !important"
+        >
+          <img
+            class="card-img-top"
+            style="border-top-left-radius: 25px; border-top-right-radius: 25px"
+            src="../../../assets/Cards/Soap.png"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h3 class="card-title text-center my-3">Blog Post One</h3>
+            <p class="card-text text-center my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+              voluptate vel laboriosam asperiores rerum corrupti suscipit eos
+              cum.
+            </p>
+            <p class="card-text text-center mt-3">Read More</p>
+            <div class="row d-flex justify-content-center mb-3">
+              <hr style="border-bottom: 3px solid #00dbd0; width: 25px" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-12 mb-3 mt-2">
+        <div
+          class="card d-flex justify-content-center"
+          style="width: 18rem; border: 0px !important"
+        >
+          <img
+            class="card-img-top"
+            style="border-top-left-radius: 25px; border-top-right-radius: 25px"
+            src="../../../assets/Cards/bottle.png"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h3 class="card-title text-center my-3">Blog Post One</h3>
+            <p class="card-text text-center my-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+              voluptate vel laboriosam asperiores rerum corrupti suscipit eos
+              cum.
+            </p>
+            <p class="card-text text-center mt-3">Read More</p>
+            <div class="row d-flex justify-content-center mb-3">
+              <hr style="border-bottom: 3px solid #00dbd0; width: 25px" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- Blogs -->
+<section class="blogs">
+  <div class="">
+    <div class="blogs-heading text-center">
+      <img
+        src="assets/light-bulb.png"
+        style="height: 60px; width: 60px"
+        alt=""
+      />
+      <h1 class="screen" style="color: rgb(80, 79, 79)">Articles & Tips</h1>
+    </div>
+    <div class="row d-flex justify-content-center" style="padding: 50px 0px">
+      <div
+        class="col-md-11 col-lg-11 col-11 text-secondary text-center"
+        style="font-size: 16px"
+      >
+        The idea is to deliver the fresh item to your door. We are specialised
+        in delevering all the North East Food Items. We deliver in less than 30
+        Mins
+      </div>
+    </div>
+    <div class="box mx-auto">
+      <div class="row justify-content-around">
+        <div
+          class="col-md-3 col-lg-3 col-11 mr-1 my-3"
+          *ngFor="let obj of blogArr"
+        >
+          <div
+            class="blog content-blog"
+            routerLink="/blog/{{ obj.url }}"
+            style="cursor: pointer"
+          >
+            <img
+              src="{{ imgurl }}/uploads/{{ obj.file }}"
+              class="img-fluid"
+              alt="Responsive image"
+              style="cursor: pointer"
+            />
+            <br />
+            <br />
+            <h4 style="cursor: pointer">{{ obj.name }}</h4>
+            <p style="cursor: pointer">
+              {{ obj.description | slice: 0:50 }}
+              {{ obj.description.length > 50 ? "..." : "" }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-3 text-center" style="padding: 55px 0px">
+        <a routerLink="/blog"><span class="view-more-btn">View More</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <div class="row d-flex justify-content-center" *ngIf="blogLoading">
+    <app-loading></app-loading>
+</div> -->
+<!-- <app-user-letter></app-user-letter> -->
+<app-user-foooter></app-user-foooter>

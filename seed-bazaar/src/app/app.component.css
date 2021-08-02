@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Futura Book';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../assets/fonts/futura-hv-bt-heavy.ttf'); /* IE9 Compat Modes */
+    src: url('../assets/fonts/futura-book-bt-22240.ttf') format('embedded-opentype'), /* IE6-IE8 */
+}

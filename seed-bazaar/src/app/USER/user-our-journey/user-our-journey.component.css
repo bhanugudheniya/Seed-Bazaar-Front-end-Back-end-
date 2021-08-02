@@ -1,0 +1,32 @@
+.about-area h1 {
+  font-size: 55px;
+}
+
+.quote {
+  position: relative;
+  top: -65px;
+}
+
+.about-area p {
+  font-size: 16px;
+  /* font-family: 'FuturaBook'; */
+}
+
+.bt {
+  background-color: #eBFFD9;
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .bt {
+    background-color: #ebffd9 !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .hb {
+    font-size: 200px;
+  }
+}

@@ -1,0 +1,62 @@
+<app-adminsidebar></app-adminsidebar>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <h2 style="text-align: center;">Content Page SEO </h2>
+
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="Name"><b>URL</b></label>
+            <input type="text" class="form-control" name="url" [(ngModel)]="url" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="row" style="width: 100%;">
+            <div class="col-12">
+            <label for="Name"><b>Meta Data</b></label>
+              <div>
+                  <div class="row mb-2" *ngFor="let obj of metadata; index as i ">
+                    <div class="col-11">
+                      < meta name="{{obj.name}}" content="{{obj.content}}" >
+                    </div>
+                    <div class="col-1" style="padding: 2px;">
+                      <button class="btn btn-danger" (click)="deleteMeta(i)">
+                        &times;
+                      </button>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="input-group mb-3">
+
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                < meta name="</span>
+            </div>
+            <input type=" text" class="form-control"  name="metaname" [(ngModel)]="metaname">
+                  <div class="input-group-append">
+                    <span class="input-group-text">" &nbsp;&nbsp; content = "</span>
+                  </div>
+                  <input type="text" class="form-control" name="metacontent" [(ngModel)]="metacontent">
+                  <div class="input-group-append">
+                    <span class="input-group-text">"></span>
+                  </div>
+            </div>
+
+          </div>
+          <div class="form-row"><button class="btn btn-info" (click)="addMeta()">Add more meta tags</button></div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-md-12">
+      <button class="btn btn-success btn-block" (click)="updateContentSeo()">
+        Update Seo
+      </button>
+    </div>
+  </div>
+</div>

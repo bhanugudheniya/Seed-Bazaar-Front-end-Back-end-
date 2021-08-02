@@ -1,0 +1,302 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  /* overflow: hidden; */
+}
+
+.box {
+  width: 90%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.checked {
+  color: orange;
+}
+/* //////////////////////////////////////////////slider  */
+.imagesize {
+  margin: 15px 0px;
+}
+.sliderHeading {
+  font-size: 30px;
+  font-weight: 100;
+}
+.sliderText {
+  font-size: 16px;
+  font-weight: 100;
+  margin: 15px 0px;
+  width: 70%;
+  text-align: center;
+}
+/* //////////////////////////////////////////////slider */
+@media only screen and (min-width: 400px) and (max-width: 600px) {
+  .our-special-products {
+    margin-top: 550px !important;
+  }
+  .img-height {
+    max-height: 350px;
+  }
+}
+
+/* ////////////////////for older phones */
+
+@media only screen and (min-width: 0px) and (max-width: 399px) {
+  .our-special-products {
+    margin-top: 550px !important;
+  }
+  .img-height {
+    max-height: 350px;
+  }
+}
+
+/* ////////////for iphoneSe  */
+
+@media only screen and (min-width: 320px) and (max-width: 320px) {
+  .our-special-products {
+    margin-top: 550px !important;
+  }
+  .img-height {
+    max-height: 350px;
+  }
+}
+
+.intro,
+.best-seller-products,
+.our-special-products,
+.blogs {
+  /* background-color: #f2ffe3; */
+  font-family: "FuturaBook";
+}
+
+.best-seller-products .best-seller-heading,
+.our-special-products .our-special-heading,
+.blogs .blogs-heading {
+  width: 100%;
+  height: 180px;
+  color: #003023;
+  background-color: #e3e7e8;
+  padding: 25px 0px;
+}
+
+.best-seller-btn {
+  display: inline-block;
+  padding: 5px 50px;
+  color: #f7e47f;
+  background-color: #033024;
+  border-radius: 30px 0px;
+  font-family: "FuturaBook";
+}
+
+.best-seller-nav-btn {
+  right: 30px;
+  bottom: 20px;
+  background: rgb(10, 95, 49);
+  background: radial-gradient(
+    circle,
+    rgba(10, 95, 49, 1) 0%,
+    rgba(0, 48, 35, 1) 100%
+  );
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.our-special-products .special-products {
+  box-shadow: 0px 0px 9px 0px rgba(50, 50, 50, 0.25);
+  padding-bottom: 25px;
+  border-radius: 6px;
+}
+
+.price {
+  color: black;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.our-special-products .special-products > h1 {
+  font-size: 20px;
+  padding-bottom: 5px;
+  outline: none;
+  /* text-transform: uppercase; */
+  /* color: #f7e47f; */
+  /* font-family: 'FuturaBook'; */
+}
+
+.view-more-btn {
+  padding: 20px 20px;
+  font-size: 14px;
+  color: black;
+  border: 0.5px solid rgba(0, 0, 0, 0.511);
+  border-radius: 6px;
+  transition: 0.3s ease-in-out;
+}
+
+.view-more-btn:hover {
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+  border: none;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.intro {
+  height: 550px;
+}
+
+.intro-heading h1 {
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  padding-top: 50px;
+}
+
+.intro-detail p {
+  font-size: 16px;
+  width: 90%;
+  margin: auto;
+  letter-spacing: -0.2px;
+  font-weight: 200;
+}
+
+.our-special-heading h1 {
+  font-size: 41px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-top: 10px;
+}
+
+.blogs-heading h1 {
+  font-size: 41px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-top: 10px;
+}
+
+.content-blog {
+  background-color: #dededeac;
+  min-height: 350px;
+  padding: 2%;
+  border-radius: 6px;
+  outline: none;
+}
+
+.blog h4 {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.blog p {
+  font-size: 14px;
+  padding-top: 5px;
+}
+
+.intro-image {
+  text-align: right;
+}
+
+.mt-auto,
+.my-auto {
+  margin-top: auto !important;
+}
+
+.mr-auto,
+.mx-auto {
+  margin-right: auto !important;
+}
+
+.mb-auto,
+.my-auto {
+  margin-bottom: auto !important;
+}
+
+img .center {
+  text-align: center;
+}
+
+.top-info {
+  font-size: 24px;
+  padding: 3%;
+  text-align: center;
+}
+
+.top-info p {
+  font-weight: 700;
+  background: -webkit-linear-gradient(#feca57, #48dbfb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* //////////////////////////////product Cards */
+
+.cards {
+  /* height: 400px; */
+  width: 100%;
+  background-color: #f0f0f02c;
+  border-radius: 10px;
+  border: solid rgba(128, 128, 128, 0.13) 1px;
+}
+.brandName {
+  position: absolute;
+  bottom: 0px;
+  left: 15px;
+  padding-left: 5px;
+  padding-right: 15px;
+  background-color: rgba(255, 255, 255, 0.504);
+}
+.productName {
+  font-size: 16px;
+  font-weight: 500;
+}
+.productDescription {
+  font-size: 14px;
+  font-weight: 300;
+}
+.priceValue {
+  color: #4d6e45;
+  font-weight: 600;
+}
+.addtocartBtn {
+  background-color: 00dbde;
+  border: solid rgba(128, 128, 128, 0.445) 1px;
+  width: 100%;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  color: #000000;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.addtocartBtn i {
+  margin-right: 10px;
+}
+.cardimage {
+  height: 280px;
+  width: 100%;
+}
+.card-title {
+  color: #00dbd0;
+  font-size: 18px;
+}
+.box {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .intro-heading h1 {
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    padding-top: 410px;
+  }
+  .card {
+    margin-left: 55px;
+  }
+}

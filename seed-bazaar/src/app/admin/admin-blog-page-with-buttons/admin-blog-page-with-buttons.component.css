@@ -1,0 +1,12 @@
+.header{
+    margin-top: 50px;
+    color: green;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.default{
+    border-radius: 20%;
+}
+.checked {
+    color: gold;
+  }

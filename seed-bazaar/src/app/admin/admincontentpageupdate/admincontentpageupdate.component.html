@@ -1,0 +1,28 @@
+<app-adminsidebar></app-adminsidebar>
+
+<div class="container pt-4">
+    <div class="row d-flex justify-content-center mt-5">
+        <div class="col-10 mt-5">
+            <div class="col-lg-12 col-md-12 mt-5">
+                <h2 style="text-align: center;">Update Content</h2>
+                <form>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="Name"><b>Title</b></label>
+                      <input type="text" class="form-control" name="title" [(ngModel)]="title" />
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="Discription"><b>Url</b></label>
+                      <input type="text" class="form-control" name="url" [(ngModel)]="url" />
+                    </div>
+                  </div>
+                  <div class="row d-flex justify-content-center">
+                    <div class="col-md-12 col-8 d-flex justify-content-center">
+                      <button type="button" class="btn btn-success" (click)="updatecontentDetails()">Submit</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+        </div>
+    </div>
+</div>

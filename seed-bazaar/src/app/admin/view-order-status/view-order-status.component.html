@@ -1,0 +1,26 @@
+<app-adminsidebar></app-adminsidebar>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <h2 style="text-align: center;">View All Products</h2>
+      <table class="table table-hover ">
+        <thead>
+          <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">Status Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let obj of dataArray; index as i">
+            <th scope="row">{{i +1}}</th>
+            <td>{{obj.statusName}}</td>
+            <td>
+              <button type="button" class="btn btn-success">Update Details</button>&nbsp;&nbsp;
+              <button type="button" (click)="deleteOrderStatus(obj._id)" class="btn btn-danger">Delete Details</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+/* My Account Page */
+
+
+/* .myaccountbg
+{
+    height: 550px;
+    background-image: url('../images/my-account-header.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+
+.name-box,
+.user-dashboard-navigation {
+    background-color: darkslategray;
+    border-radius: 10px;
+}
+
+.active-profile-setting {
+    background-color: rgb(13, 110, 74);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#first-name,
+#last-name,
+#user-email,
+#user-phone {
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: #cee0bf;
+    padding: 3px 10px;
+}
+
+.user-details h5 {
+    color: rgb(2, 48, 35);
+}
+
+.user-details a {
+    text-decoration: none;
+    color: rgb(11, 95, 49);
+}
+
+#user-name,
+#user-phone,
+#user-pincode,
+#user-email,
+#user-address,
+#user-city,
+#user-state,
+#user-landmark,
+#user-locality,
+#user-password,
+#repassword {
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: #3c3c3c5e;
+    padding: 3px 10px;
+    color: white;
+    padding: 3px 10px;
+}
+
+.user-details button {
+    background-color: rgb(2, 48, 35);
+    border: solid 1px #fff;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 15px;
+}

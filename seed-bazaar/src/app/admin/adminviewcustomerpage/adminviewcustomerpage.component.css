@@ -1,0 +1,33 @@
+.container h1
+{
+    text-align: center;
+}
+.table
+{
+    position: relative;
+    
+}
+.button
+{
+    background-color:goldenrod;
+    border-radius: 5px;
+    width: 150px;
+    color: white;
+    height: 35px;
+}
+.button-1
+{
+    background-color: green;
+    border-radius: 5px;
+    width: 150px;
+    color: white;
+    height: 35px;
+}
+.button-2
+{
+    background-color:darkred;
+    border-radius: 5px;
+    width: 150px;
+    color: white;
+    height: 35px;
+}

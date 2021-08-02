@@ -1,0 +1,160 @@
+a.dropdown-item
+{
+    cursor: pointer;
+}
+
+.tkf-sidebar
+{
+    z-index: 10000;
+    transform: translateX(-100%);
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(181, 195, 181);
+    position: absolute;
+    display: flex;
+    top: 0px;
+    transition: all 0.3s ease-in-out;
+    overflow-y: visible;
+}
+
+.tkf-nav-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: flex-start;
+    max-width: 300px;
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 0px ;
+    /* min-height: 100vh; */
+    color: white;
+
+}
+
+.tkf-nav-container li {
+    width: 300px !important;
+    align-items: flex-start;
+    /* color: red; */
+}
+.tkf-navitem{
+    width: 100%;
+    list-style: none;
+    padding: 0.3em;
+    font-size: 20px;
+    align-items: flex-start;
+    text-align: left;
+    color: black !important;
+    cursor: pointer;
+}
+
+.close{
+    position: relative;
+    right: 0px;
+    top: 0px;
+    padding: 5px;
+    text-align: right;
+    color: black;
+    cursor: pointer;
+}
+
+.brandName{
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600 !important;
+    margin-top: 55px;
+    /* padding-top: 10; */
+    color: #00DBD0;
+}
+
+.tkf-brand{
+    text-align: center;
+    list-style: none;
+}
+/* .hrSideBar
+{
+    border: 0;
+    height: 1px;
+    background: #e4ce6a;
+    background-image: linear-gradient(to right, #333, #e4ce6a, #333);
+} */
+
+.tkf-drop-check:checked ~ .tkf-dropdown-items{
+    display: unset;
+}
+
+.tkf-dropdown-items{
+    margin-top: -50px;
+    padding-top: -50px;
+    display: none;
+}
+
+.tkf-drop-check{
+    display: none;
+}
+
+.tkf-dropdown-items:first-child{
+    margin-top: 15px;
+}
+.tkf-drop-items:first-child{
+    margin-top: 10px;
+}
+
+.tkf-drop-items:hover{
+    background-color:#00DBD0 ;
+    color: #fff;
+}
+.tkf-drop-items
+{
+    list-style: none;
+    cursor: pointer;
+    font-weight: 100;
+    padding-left: 20px;
+    font-size: 16px !important;
+}
+.tkf-dropdown-label:hover{
+    background-color: #00DBD0;
+    color: white;
+}
+.tkf-dropdown-label{
+    width: 100%;
+    margin-bottom: -10px;
+    cursor: pointer;
+    font-weight: 400;
+    padding-left: 20px;
+    margin-top: 40p;
+    font-size:25
+}
+
+.tkf-hamburger
+{
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    height: 25px;
+    justify-content: space-around;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index : 9999
+}
+
+.tkf-hamburger-bars{
+    background-color: black;
+    height: 3px;
+    z-index: 9999;
+}
+
+.tkf-sidebar-active{
+    transform: translateX(0%);
+}
+
+.tkf-active
+{
+    color: rgb(114, 112, 112);
+}
+
+.tkf-drop-items
+{
+    color: black;
+}

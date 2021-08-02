@@ -1,0 +1,339 @@
+<app-plainheader></app-plainheader>
+<!-- <app-userheader></app-userheader> -->
+<section class="pt-3 pb-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h5 class="text-uppercase">Profile Information</h5>
+        <hr style="background-color: rgb(34, 34, 34)" />
+      </div>
+      <div class="col-md-3">
+        <div class="row name-box pt-3 pb-3">
+          <div class="col-md-3 text-center my-auto">
+            <img
+              src="assets/bussiness-man.png"
+              alt="user-profile"
+              width="40px"
+            />
+          </div>
+          <div class="col-md-9 my-auto">
+            <span style="color: #fff">Hello,</span>
+            <h5 style="color: rgb(247, 228, 127)">{{ userObj.firstname }}</h5>
+          </div>
+        </div>
+        <div class="row user-dashboard-navigation mt-4">
+          <div class="col-md-12">
+            <div class="row pt-4 pb-2">
+              <div class="col-md-3 text-center my-auto">
+                <img src="assets/box.png" alt="order-icon" width="30px" />
+              </div>
+              <div class="col-md-7 my-auto">
+                <a routerLink="/user/orderHistory">
+                  <h6
+                    class="text-uppercase m-0"
+                    style="color: rgb(247, 228, 127)"
+                  >
+                    My Orders
+                  </h6>
+                </a>
+              </div>
+              <div class="col-md-2 my-auto">
+                <img
+                  src="assets/Images/right-arrow.png"
+                  alt="right-arrow"
+                  width="12px"
+                />
+              </div>
+              <div class="col-md-12">
+                <hr style="background-color: rgb(247, 228, 127)" />
+              </div>
+            </div>
+            <div class="row pt-2 pb-2">
+              <div class="col-md-3 text-center">
+                <img
+                  src="assets/bussiness-man.png"
+                  alt="account-icon"
+                  width="30px"
+                />
+              </div>
+              <div class="col-md-9">
+                <h6 class="text-uppercase text-white">Account Settings</h6>
+                <a href="#">
+                  <h6 class="active-profile-setting" style="color: #fff">
+                    Profile Information
+                  </h6>
+                </a>
+                <a routerLink="/user/manageAddress">
+                  <h6 style="color: #fff">Manage Address</h6>
+                </a>
+              </div>
+              <div class="col-md-12">
+                <hr style="background-color: rgb(247, 228, 127)" />
+              </div>
+            </div>
+            <div class="row pb-2">
+              <div class="col-md-3 text-center my-auto">
+                <img src="assets/logout.png" alt="logout-icon" width="30px" />
+              </div>
+              <div class="col-md-9 my-auto">
+                <a>
+                  <h6
+                    class="text-uppercase m-0"
+                    style="color: rgb(247, 228, 127); cursor: pointer"
+                  >
+                    Logout
+                  </h6>
+                </a>
+              </div>
+              <div class="col-md-12">
+                <hr style="background-color: rgb(247, 228, 127)" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 offset-md-1 user-details" *ngIf="userObj">
+        <div class="row pt-3">
+          <div class="col-md-12 pb-2">
+            <h5 class="d-inline">Profile Information</h5>
+            &emsp;
+            <span class="ml-2"
+              ><span
+                style="color: rgb(11, 95, 49); cursor: pointer"
+                (click)="toggleEditToggle()"
+                >Edit</span
+              ></span
+            >
+          </div>
+          <div class="col-md-6 mb-2">
+            <input
+              type="text"
+              id="first-name"
+              [value]="userObj.firstname"
+              [disabled]="editToggle"
+              [(ngModel)]="userObj.firstname"
+              name="firstname"
+            />
+          </div>
+          <div class="col-md-6">
+            <input
+              type="text"
+              id="last-name"
+              [value]="userObj.lastname"
+              [disabled]="editToggle"
+              name="userObj.lastname"
+              [(ngModel)]="userObj.lastname"
+            />
+          </div>
+        </div>
+        <div class="row pt-3">
+          <div class="col-md-12">
+            <h5 class="d-inline">Your Gender</h5>
+          </div>
+          <div class="col-md-6 my-auto">
+            <input
+              type="radio"
+              id="male"
+              name="gender"
+              [value]="0"
+              [disabled]="editToggle"
+              name="userObj.gender"
+              [(ngModel)]="userObj.gender"
+            />
+            <label for="male">Male</label>
+            <input
+              type="radio"
+              id="female"
+              name="gender"
+              [value]="1"
+              [disabled]="editToggle"
+              name="userObj.gender"
+              [(ngModel)]="userObj.gender"
+            />
+            <label for="female">Female</label>
+          </div>
+        </div>
+        <div class="row pt-3">
+          <div class="col-md-12 pb-2">
+            <h5 class="d-inline">Email Address</h5>
+            &emsp;
+            <span class="ml-2"
+              ><span
+                href="#"
+                style="color: rgb(11, 95, 49); cursor: pointer"
+                (click)="toggleEditToggle()"
+                >Edit</span
+              ></span
+            >
+            &nbsp;
+            <span
+              ><span
+                href="#"
+                style="color: rgb(11, 95, 49); cursor: pointer"
+                data-toggle="modal"
+                data-target="#exampleModal"
+                >Change Password</span
+              ></span
+            >
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Modal title
+                    </h5>
+                  </div>
+                  <div class="modal-body">
+                    <form [formGroup]="changePasswordForm"></form>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                      Save changes
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <input
+              type="text"
+              id="user-email"
+              [value]="userObj.email"
+              [disabled]="editToggle"
+              name="userObj.email"
+              [(ngModel)]="userObj.email"
+            />
+          </div>
+        </div>
+        <div class="row pt-3">
+          <div class="col-md-12">
+            <h5 class="d-inline">Mobile No.</h5>
+            &emsp;
+            <span
+              ><span
+                href="#"
+                style="color: rgb(11, 95, 49); cursor: pointer"
+                (click)="toggleEditToggle()"
+                >Edit</span
+              ></span
+            >
+          </div>
+          <div class="col-md-6">
+            <input
+              type="tel"
+              id="user-phone"
+              [value]="userObj.phone"
+              [disabled]="editToggle"
+              name="userObj.phone"
+              [(ngModel)]="userObj.phone"
+            />
+          </div>
+        </div>
+        <div class="row pt-3">
+          <div class="col-md-12">
+            <h5 class="d-inline">Referal Code</h5>
+            &emsp;
+          </div>
+          <div class="col-md-6">
+            <input
+              type="text"
+              id="user-phone"
+              [value]="userObj.referalCode"
+              disabled
+            />
+          </div>
+        </div>
+        <div class="row pt-3">
+          <div class="col-md-12">
+            <h5 class="d-inline">Wallet Amount</h5>
+            &emsp;
+          </div>
+          <div class="col-md-6">
+            <input
+              type="text"
+              id="user-phone"
+              [value]="userObj.wallet"
+              disabled
+            />
+          </div>
+          <div class="col-md-6">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-toggle="modal"
+              data-target="#exampleModal12"
+            >
+              Recharge
+            </button>
+          </div>
+        </div>
+        <div class="row pt-3" *ngIf="!editToggle">
+          <button type="button" class="checkoutbtn" (click)="updateProfile()">
+            Update
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal12"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Recharge Wallet</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input
+          type="text"
+          name="amount"
+          [(ngModel)]="amount"
+          placeholder="Enter Amount"
+        />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary" (click)="recharge()">
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<app-user-letter></app-user-letter>
+<app-user-foooter></app-user-foooter>

@@ -1,0 +1,21 @@
+.table-hover tbody tr:hover > td {
+    background-color: #DCF7C1;
+  }
+  .table-hover tbody tr:hover > th {
+    background-color: #DCF7C1;
+  }  
+  .btn{
+      margin-top: 10px;
+      padding-left: 20px;
+      margin-left: 5px;
+      background-color:rgb(23, 212, 23);
+  }
+
+  .table{
+      border: 2px solid #C9A43F;
+  }
+  .btn-primary:focus {
+    border-color: #dcf7c1 !important;
+    box-shadow: 0 0 0 0.2rem #dcf7c1 !important;
+  }
+ 

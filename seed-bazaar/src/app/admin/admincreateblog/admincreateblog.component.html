@@ -1,0 +1,67 @@
+<app-adminsidebar></app-adminsidebar>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-mg-12 col-lg-12 header mt-2 d-flex justify-content-center text-center">
+        <h2><b>Create Blog</b></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col heading">
+        <h6><b>Blog name</b></h6>
+        <input type="text" class="form-control" placeholder="BlogHeading" name='name' [(ngModel)]='name' >
+      </div>
+      <div class="col heading">
+        <h6><b>Blog Author</b></h6>
+        <input type="text" class="form-control" placeholder="Blog Auhor" name='author' [(ngModel)]='author' >
+      </div>
+    </div>
+    <div class="row">
+      <div class="col heading mt-2">
+        <h6><b>Blog Description</b></h6>
+        <textarea  class="form-control fm" placeholder="Blog Description" name='description' [(ngModel)]='description' ></textarea>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col heading">
+        <h6><b>Url</b></h6>
+        <input type="text" class="form-control" placeholder="Blog Auhor" name='url' [(ngModel)]='url' >
+      </div>
+      <div class="col header">
+        <form class="form-inline">
+          <label class="my-1 mr-2" for="inlineFormCustomSelectPref"><h6><b>Select Product</b></h6></label>
+          <select class="custom-select my-1 " id="inlineFormCustomSelectPref" name='productName' [(ngModel)]='productName' >
+            <option value="">Choose A Product</option>
+            <option *ngFor="let obj of productArr ">{{obj.name}}</option>
+          </select>
+        </form>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col heading">
+        <h6><b>Blog Image</b></h6>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1"
+                      (change)="onFileChange($event)">
+      </div>
+    </div>
+  </div>
+
+  <div class="container"></div>
+  <div class="container-fluid editor">
+    <div class="row">
+      <div class="col">
+        <h4>
+          Blog Input:
+        </h4>
+      </div>
+    </div>
+    <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent" [config]="editorConfig"></angular-editor>
+
+  </div>
+    <div class="container">
+        <div class="row">
+          <div class="col bt">
+            <button type="button" class="btn btn-success header btn-block" (click)="addBlog()">Submit</button>
+          </div>
+        </div>
+    </div>
+

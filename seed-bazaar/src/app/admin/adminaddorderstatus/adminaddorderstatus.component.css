@@ -1,0 +1,26 @@
+.container h1
+{
+    text-align: center;
+}
+.form-group
+{
+    position: relative;
+    top: 40px;
+    left: 100px;
+    right: 100px;
+}
+.button
+{
+  text-align: center;
+}
+.button-1
+{
+  position: relative;
+  top: 40px;
+  height: 45px;
+  width: 300px;
+  border-radius: 5px;
+  background-color: goldenrod;
+  color: white;
+  font-size: 20px;
+}

@@ -1,0 +1,94 @@
+<div class="container-fluid bg">
+  <div class="row">
+    <div class="col-md-4 col-lg-4 col-sm-12"></div>
+    <div class="col-md-4 col-lg-4 col-sm-12">
+      <!--FORM START-->
+      <form class="form-container">
+        <div class="form-group">
+          <label for="Name"><b style="color: #eee">firstname</b> </label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="Enter Name"
+            name="firstname"
+            [(ngModel)]="firstname"
+          />
+        </div>
+        <div class="form-group">
+          <label for="lastName"><b style="color: #eee">lastname</b> </label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastname"
+            placeholder="Enter Name"
+            name="lastname"
+            [(ngModel)]="lastname"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="phone"><b style="color: #eee">Phone</b> </label>
+          <input
+            type="number"
+            class="form-control"
+            id="phonename"
+            placeholder="phone"
+            name="phone"
+            [(ngModel)]="phone"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1"
+            ><b style="color: #eee">Email</b>
+          </label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Enter email"
+            name="email"
+            [(ngModel)]="email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1"
+            ><b style="color: #eee">Password</b></label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Password"
+            name="password"
+            [(ngModel)]="password"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1"
+            ><b style="color: #eee">Referal Code if any</b></label
+          >
+          <input
+            type="text"
+            class="form-control"
+            placeholder="code"
+            name="referalCode"
+            [(ngModel)]="referalCode"
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-primary btn-block"
+          (click)="userRegister()"
+        >
+          Register
+        </button>
+      </form>
+      <!--FORM END-->
+    </div>
+    <div class="col-md-4 col-lg-4 col-sm-12"></div>
+  </div>
+</div>

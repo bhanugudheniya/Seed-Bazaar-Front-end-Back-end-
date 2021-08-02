@@ -1,0 +1,95 @@
+<app-userheader></app-userheader>
+
+<div class="container-fluid setPos">
+  <div class="row d-flex justify-content-center">
+    <div class="col-10">
+      <div class="row">
+        <div class="col-12">
+          <div class="breadcrumb_content">
+            <h3>Contact Us</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact_area mt-5">
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <!-- <div class="col-lg-6 col-md-12">
+              <div class="contact_message content">
+                <h3>contact us</h3>
+                <p>
+                  Claritas est etiam processus dynamicus, qui sequitur
+                  mutationem consuetudium lectorum. Mirum est notare quam
+                  littera gothica, quam nunc putamus parum claram anteposuerit
+                  litterarum formas human. qui sequitur mutationem consuetudium
+                  lectorum. Mirum est notare quam
+                </p>
+                <ul>
+                  <li>
+                    <i class="fa fa-fax"></i> Address : No 40 Baria Sreet 133/2
+                    NewYork City
+                  </li>
+                  <li>
+                    <i class="fa fa-phone"></i>
+                    <a href="#">Infor@roadthemes.com</a>
+                  </li>
+                  <li>
+                    <i class="fa fa-envelope-o"></i
+                    ><a href="tel:0(1234)567890">0(1234) 567 890</a>
+                  </li>
+                </ul>
+              </div>
+            </div> -->
+            <div class="col-lg-6 col-md-12">
+              <div class="contact_message form">
+                <h3>Tell us your project</h3>
+                <form
+                  id="contact-form"
+                  [formGroup]="contactUs"
+                  (ngSubmit)="addContactUs()"
+                >
+                  <p>
+                    <label> Your Name (required)</label>
+                    <input class="inputTExt"
+                      placeholder="Name *"
+                      formControlName="name"
+                      type="text"
+                    />
+                  </p>
+                  <p>
+                    <label> Your Email (required)</label>
+                    <input class="inputTExt"
+                      placeholder="Email *"
+                      formControlName="email"
+                      type="email"
+                    />
+                  </p>
+                  <p>
+                    <label> Subject</label>
+                    <input class="inputTExt"
+                      placeholder="Subject *"
+                      formControlName="subject"
+                      type="text"
+                    />
+                  </p>
+                  <div class="contact_textarea">
+                    <label> Your Message</label>
+                    <textarea
+                      placeholder="Message *"
+                      formControlName="message"
+                      class="inputTExt form-control2"
+                    ></textarea>
+                  </div>
+                  <button type="submit" style="background-color: #00DBD0;">Send</button>
+                  <p class="form-messege"></p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-user-foooter></app-user-foooter>

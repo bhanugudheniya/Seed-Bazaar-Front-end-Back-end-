@@ -1,0 +1,131 @@
+
+  <app-adminsidebar></app-adminsidebar>
+  
+<div class="container">
+
+  <h1>Manage Customers</h1>
+  <form>
+    <input type="text" name="search" [(ngModel)]="search">
+  </form>
+  <table class="table ">
+    <thead>
+      <tr>
+        <th scope="col-sm">S. No.</th>
+        <th scope="col" (click)="setOrder('name')">First Name<span *ngIf="reverse==true">&uarr;</span>
+          <span *ngIf="reverse==false">&darr;</span></th>
+        <th scope="col">Last Name</th>
+        <th scope="col">EmailId</th>
+        <th scope="col">Choose
+
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let obj of (customerArr | orderBy: order:reverse | filter:search);index as i">
+        <th scope="row">{{i+1}}</th>
+        <td>{{obj.firstname}}</td>
+        <td>{{obj.lastname}}</td>
+        <td>{{obj.email}}</td>
+        <th scope="col">
+          <button type="button" class="btn btn-success" (click)="setUpdate(obj)" data-toggle="modal" data-target="#exampleModalDelete">Delete Account</button>
+          <button type="button" class="btn btn-success" (click)="setUpdate(obj)"  data-toggle="modal" data-target="#exampleModalPassword">Reset Password</button>
+          <button type="button" class="btn btn-primary" (click)="setUpdate(obj)" data-toggle="modal"
+            data-target="#exampleModal">Update Details</button>
+        </th>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" *ngIf="customerUpdateObj" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update Customer</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-row">
+            <div class="col-lg-6">
+
+              <div class="form-group">
+                <label for="firstname">Firstname</label>
+                <input type="text" name="firstname" class="form-control" [value]="customerUpdateObj.firstname"
+                [(ngModel)]="customerUpdateObj.firstname" id="firstname">
+                <label for="lastname">Lastname</label>
+                <input type="text" name="lastname" class="form-control" [value]="customerUpdateObj.lastname"
+                [(ngModel)]="customerUpdateObj.lastname" id="lastname">
+              </div>
+            </div>
+          
+            <div class="col-lg-6">
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" [value]="customerUpdateObj.email" name="email" class="form-control" [(ngModel)]="customerUpdateObj.email" id="email">
+                <label for="phone">Phone</label>
+                <input type="text" name="phone" [value]="customerUpdateObj.phone" class="form-control" [(ngModel)]="customerUpdateObj.phone" id="phone">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" (click)="updateCustomer(customerUpdateObj._id)" class="btn btn-primary">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- delete Modal -->
+<div class="modal fade"  id="exampleModalDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabeldelete"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabeldelete">Are you sure you want to delete ?</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">No</button>
+      <button type="button" class="btn btn-danger" (click)="deleteAccount(customerUpdateObj._id)">Yes</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Reset Password -->
+<div class="modal fade" id="exampleModalPassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabeldelete"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabeldelete">Reset Password</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+          <label for="password">Enter Password</label>
+          <input class="form-control" type="text" id="password" name="password" [(ngModel)]="password">
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">No</button>
+      <button type="button" class="btn btn-danger" (click)="resetPassword(password)">Yes</button>
+    </div>
+  </div>
+</div>
+</div>

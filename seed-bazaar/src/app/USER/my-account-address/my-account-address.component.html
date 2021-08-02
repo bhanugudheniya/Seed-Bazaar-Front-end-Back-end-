@@ -1,0 +1,184 @@
+<app-homepage-header></app-homepage-header>
+<!-- <app-userheader></app-userheader> -->
+<section class="pt-3">
+    <div class="container" *ngIf="userObj">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h5 class="text-uppercase">Manage Address</h5>
+                <hr style="background-color: rgb(11,95,49)">
+            </div>
+            <div class="col-md-3">
+                <div class="row name-box pt-3 pb-3">
+                    <div class="col-md-3 text-center my-auto">
+                        <img src="assets/bussiness-man.png" alt="user-profile" width="40px">
+                    </div>
+                    <div class="col-md-9 my-auto">
+                        <span style="color: #fff;">Hello,</span>
+                        <h5 style="color: rgb(247,228,127);">{{userObj.firstname}}</h5>
+                    </div>
+                </div>
+                <div class="row user-dashboard-navigation mt-4">
+                    <div class="col-md-12">
+                        <div class="row pt-4 pb-2">
+                            <div class="col-md-3 text-center my-auto">
+                                <img src="assets/box.png" alt="order-icon" width="30px">
+                            </div>
+                            <div class="col-md-7 my-auto">
+                                <a routerLink="/user/orderHistory">
+                                    <h6 style="color: #fff" class="text-uppercase m-0">My Orders</h6>
+                                </a>
+                            </div>
+                            <div class="col-md-2 my-auto">
+                                <img src="assets/Images/right-arrow.png" alt="right-arrow" width="12px">
+                            </div>
+                            <div class="col-md-12">
+                                <hr style="background-color: rgb(247,228,127)">
+                            </div>
+                        </div>
+                        <div class="row pt-2 pb-2">
+                            <div class="col-md-3 text-center">
+                                <img src="assets/bussiness-man.png" alt="account-icon" width="30px">
+                            </div>
+                            <div class="col-md-9">
+                                <h6 style="color: #fff" class="text-uppercase">Account Settings</h6>
+                                <a routerLink="/user/myAccount">
+                                    <h6 style="color: #fff">Profile Information</h6>
+                                </a>
+                                <a routerLink="/user/manageAddress">
+                                    <h6 class="active-profile-setting" style="color: #fff">Manage Address</h6>
+                                </a>
+                            </div>
+                            <div class="col-md-12">
+                                <hr style="background-color: rgb(247,228,127)">
+                            </div>
+                        </div>
+                        <div class="row pb-2">
+                            <div class="col-md-3 text-center my-auto">
+                                <img src="assets/logout.png" alt="logout-icon" width="30px">
+                            </div>
+                            <div class="col-md-9 my-auto">
+                                <a>
+                                    <h6 (click)="logout()" class="text-uppercase m-0" style="color: rgb(235, 235, 235)">
+                                        Logout</h6>
+                                </a>
+                            </div>
+                            <div class="col-md-12">
+                                <hr style="background-color: rgb(247,228,127)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 offset-md-1 user-details" *ngIf="userObj.address">
+                <div class="row pt-4">
+                    <div class="col-md-6 mb-2">
+                        <input type="text" id="user-name" placeholder="First Name" [value]="userObj.firstname"
+                            [(ngModel)]="userObj.firstname" disabled>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <input type="text" id="user-name" placeholder="Last Name" [value]="userObj.lastname"
+                            [(ngModel)]="userObj.lastname" disabled>
+
+                    </div>
+
+                </div>
+                <div class="row pt-4">
+                    <div class="col-md-6">
+                        <input type="tel" id="user-phone" placeholder="Mobile" [value]="userObj.phone"
+                            [(ngModel)]="userObj.phone" disabled>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="email" id="user-email" placeholder="E-Mail" [value]="userObj.email"
+                            [(ngModel)]="userObj.email" disabled>
+                    </div>
+                </div>
+                <div class="row pt-4">
+                    <div class="col-md-6 mb-2">
+                        <input type="number" id="user-pincode" placeholder="Pincode" name="userObj.address.zipCode"
+                            [(ngModel)]="userObj.address.zipCode">
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <input type="text" id="user-address" placeholder="Address" name='userObj.address.address1'
+                            [(ngModel)]='userObj.address.address1'>
+                    </div>
+                </div>
+                <div class="row pt-4">
+                    <div class="col-md-6 mb-2">
+                        <!-- <input type="text" id="user-city" placeholder="City" [value]="userObj.address.city" name="userObj.address.city" [(ngModel)]="userObj.address.city"> -->
+                        <input type="text" id="user-city" placeholder="City" name='userObj.address.city'
+                            [(ngModel)]='userObj.address.city'>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" id="user-state" placeholder="State" name='userObj.address.state'
+                            [(ngModel)]='userObj.address.state'>
+
+                        <!-- <select name="state" id="user-state">
+                            <option value="" selected disabled>Select State</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                            <option value="Daman and Diu">Daman and Diu</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Lakshadweep">Lakshadweep</option>
+                            <option value="Puducherry">Puducherry</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">West Bengal</option>
+                        </select> -->
+                    </div>
+                </div>
+                <div class="row pt-4">
+                    <div class="col-md-6 mb-2">
+                        <input type="text" id="user-landmark" placeholder="Landmark" name='userObj.address.address2'
+                            [(ngModel)]='userObj.address.address2'>
+                    </div>
+                    <!-- <div class="col-md-6">
+                        <input type="text" id="user-locality" placeholder="Locality" [value]="userObj.address.state" [(ngModel)]="userObj.address.">
+                    </div> -->
+                </div>
+                <!-- <div class="row pt-4">
+                    <div class="col-md-6">
+                        <input type="radio" id="home" name="gender" value="home">
+                        <label for="home">Home</label>
+                        <input type="radio" id="work" name="gender" value="work">
+                        <label for="work">Work</label>
+                    </div>
+                </div> -->
+                <div class="row pt-4">
+                    <div class="col-md-12">
+                        <button (click)="updateProfile()">Save</button>
+                        <button>Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-user-letter></app-user-letter>
+<app-user-foooter></app-user-foooter>

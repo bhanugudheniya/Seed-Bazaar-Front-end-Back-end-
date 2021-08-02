@@ -1,0 +1,63 @@
+<app-adminsidebar></app-adminsidebar>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 offset-lg-1" >
+            <h2 class="d-flex justify-content-center">Manage Product Stocks</h2>
+            <div class="table-responsive">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Product Variant</th>
+                            <th scope="col">Stock Left</th>
+                            <th scope="col">Manage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let obj of productsArr;index as i">
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{obj.name}}</td>
+                            <td>
+                                <p *ngFor="let obj1 of productsArr[i].listPrice;index as j">{{obj1.variantName}}</p>
+                            </td>
+                            <td>
+                                <p *ngFor="let obj1 of productsArr[i].listPrice;index as j">{{obj1.variantStock}}</p>
+                            </td>
+                            <td>
+                                <p *ngFor="let obj1 of productsArr[i].listPrice;index as j" >
+                                    <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal" (click)="setUpdate(obj1,j,i,obj._id)">Manage</button>
+                                </p>
+                                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade"  id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+      <div class="modal-content" *ngIf="updateObj">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Manage Stock For {{updateObj.variantName}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form >
+              <input type="number" name="variantStock" [(ngModel)]="variantStock" placeholder="Stock">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" (click)="updateStock()">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>

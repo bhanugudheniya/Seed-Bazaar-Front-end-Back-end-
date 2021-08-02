@@ -1,0 +1,14 @@
+.setPos {
+    margin-top: -500px;
+}
+
+.inputTExt{
+    border: solid 2px #00DBD0;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    .setPos {
+        margin-top: unset;
+    }
+}

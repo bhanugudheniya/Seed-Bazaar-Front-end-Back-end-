@@ -1,0 +1,39 @@
+<app-adminsidebar></app-adminsidebar>
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col">
+            <h4> View Contact Details </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="table-responsive">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Subject</th>
+                            <th scope="col">Message</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let obj of displayArr; index as i">
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{obj.name}}</td>
+                            <td>{{obj.phone}}</td>
+                            <td>{{obj.email}}</td>
+                            <td>{{obj.subject}}</td>
+                            <td>{{obj.message}}</td>
+                            <td><button class="btn btn-danger" (click)="deleteContactUs(obj._id)"> Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

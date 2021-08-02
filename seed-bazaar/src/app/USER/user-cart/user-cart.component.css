@@ -1,0 +1,314 @@
+@media only screen and (max-width: 600px) {
+    .tb {
+        background-color: #ebffd9 !important;
+        width: 100% !important;
+    }
+}
+
+.table,
+.row {
+    /* text-transform: uppercase; */
+}
+
+.table tbody tr td {
+    vertical-align: middle;
+}
+
+.quantity {
+    width: 40px;
+    text-align: center;
+}
+
+.incrementbtn {
+    width: 35px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.decrementbtn {
+    width: 35px;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.sub-menu a {
+    color: white;
+}
+
+.sub-menu a:hover {
+    color: #153028 !important;
+    background-color: #DCF7C1;
+}
+
+.coupon,
+.shipping {
+    width: auto;
+}
+
+.couponinput,
+.shippinginput {
+    width: auto;
+    border-radius: 10px;
+    border: none;
+    background-color: #cee0bf;
+    padding: 3px 10px;
+}
+
+.couponapplybtn,
+.getquotesbtn {
+    border: 1px solid #18331d;
+    background-color: transparent;
+    border-radius: 20px;
+    padding: 2.5px;
+    width: 125px;
+    /* text-transform: uppercase; */
+}
+
+.checkoutbtn {
+    border: none;
+    background-color: #0a0a0a;
+    color: #fff;
+    border-radius: 20px;
+    padding: 8px 10px;
+    width: 40%;
+    /* text-transform: uppercase; */
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Firefox */
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+ ::-webkit-scrollbar {
+    width: 12px;
+}
+
+ ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background-color: #c8a23d;
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+    border-radius: 10px;
+}
+
+
+/* h1, h2, h3, h4, h5, h6
+  {
+      font-family: 'FuturaHeavy';
+  } */
+
+body {
+    font-family: 'FuturaBook';
+}
+
+.main-menu {
+    transition: all 0.3s ease 0s;
+}
+
+.main-menu nav ul li {
+    display: inline-block;
+    /* margin-left: 25px; */
+    margin-left: 0%;
+}
+
+.main-menu nav ul li:first-child {
+    margin-left: 0;
+}
+
+.main-menu ul>li>a {
+    color: #c8a23d;
+    display: block;
+    transition: all 0.3s ease 0s;
+    background: transparent;
+    line-height: 1;
+    position: relative;
+    /* text-transform: uppercase; */
+    font-weight: bold;
+    font-family: 'FuturaBook';
+    text-decoration: none;
+}
+
+.main-menu ul li a:hover {
+    color: #f7e47f;
+    text-decoration: none;
+}
+
+.main-menu nav ul li.active>a {
+    color: #003023;
+    background-color: #f7e47f;
+    border-radius: 15px 0px;
+    padding: 5px 15px;
+}
+
+.main-menu nav ul li .sub-menu {
+    background: #c49b4a none repeat scroll 0 0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
+    opacity: 0;
+    position: absolute;
+    top: 85%;
+    transition: all 0.3s ease 0s;
+    visibility: hidden;
+    /* width: 150px; */
+    border-radius: 5%;
+    z-index: 9;
+    overflow: hidden;
+}
+
+.main-menu nav ul li:hover .sub-menu {
+    opacity: 1;
+    top: 150%;
+    visibility: visible;
+}
+
+.main-menu nav>ul>li .sub-menu a {
+    display: block;
+}
+
+.main-menu nav>ul>li .sub-menu a {
+    color: #fff;
+    font-size: 15px;
+    font-family: 'FuturaBook';
+    margin: 0;
+    padding: 10px 15px;
+    /* text-transform: capitalize; */
+    display: block;
+    transition: all 0.3s ease 0s;
+}
+
+.main-menu nav>ul>li:hover>.sub-menu a>a:hover {
+    color: white;
+    background: #DCF7C1;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.sub-menu a {
+    color: white;
+}
+
+.sub-menu a:hover {
+    color: #153028 !important;
+    background-color: #DCF7C1;
+}
+
+.search-bar,
+.sign-in {
+    /* padding: 30px 0px; */
+    transition: all 0.3s ease 0s;
+}
+
+#search-area {
+    border-radius: 1rem;
+    background-color: #c8a23d;
+    border-color: #c8a23d;
+    height: calc(1.5em + 0.32rem);
+    padding: 0.1rem 0.75rem;
+}
+
+#sign-in {
+    color: #17331b;
+    background-color: #c49b4a;
+    border-color: #c49b4a;
+    font-family: 'FuturaBook';
+    font-weight: bold;
+    border-radius: 1rem;
+    padding: 0.1rem 0.75rem;
+}
+
+.user-cart-icon {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    background-image: linear-gradient(45deg, rgba(247, 229, 126, 1) 0%, rgba(164, 109, 41, 1) 0%, rgba(247, 229, 126, 1) 100%, rgba(200, 162, 61, 1) 100%);
+    list-style: none;
+    border-radius: 15px 0px 0px 15px;
+    padding: 20px 5px;
+}
+
+.user-cart-icon>li:first-child {
+    padding-bottom: 10px;
+}
+
+.indexbg {
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.75);
+}
+
+.navbar-toggler-icon {
+    color: black !important;
+    border: black 1px solid;
+}
+
+header {
+    height: 675px;
+    width: 100%;
+    background-image: url('../../../assets/Images/cart-header.png');
+    background-repeat: no-repeat;
+    /* background-size: contain; */
+    background-size: 100% 100%;
+    /* background-attachment: fixed; */
+}
+
+.intro {
+    height: 550px;
+}
+
+.intro-heading h1 {
+    font-size: 60px;
+    padding-top: 50px;
+}
+
+.intro-detail p {
+    font-size: 20px;
+}
+
+.mt-auto,
+.my-auto {
+    margin-top: auto !important;
+}
+
+.mr-auto,
+.mx-auto {
+    margin-right: auto !important;
+}
+
+.mb-auto,
+.my-auto {
+    margin-bottom: auto !important;
+}
+
+img .center {
+    /* display: block;
+      margin-left: auto;
+      margin-right: auto; */
+    text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+    .checkoutbtn {
+        display: block !important;
+        width: 100% !important;
+        margin-left: -10px !important;
+    }
+    .checkoutbtn {
+        border: none;
+        background-color: #0a0a0a;
+        color: #fff;
+        border-radius: 20px;
+        width: 80%;
+    }
+}

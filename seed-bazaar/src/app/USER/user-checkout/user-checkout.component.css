@@ -1,0 +1,46 @@
+.regular-font {
+    font-family: 'FuturaBook';
+}
+
+.medium-font {
+    font-family: 'FuturaMedium';
+}
+
+.heavy-font {
+    font-family: 'FuturaHeavy';
+}
+
+body {
+    font-family: 'FuturaBook';
+}
+
+
+/* Checkout Page */
+
+.billing-details {
+    /* background-color: #EBFFD9; */
+}
+
+.checkoutbg {
+    height: 550px;
+    background-image: url('../../../assets/Images/checkout-header.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.check {
+    width: 100%;
+    /* margin: 10%; */
+}
+
+.checkoutbtn {
+    border: none;
+    background-color: #18331d;
+    color: #fff;
+    padding: 3%;
+    margin: 0px !important;
+    border-radius: 5px;
+    /* padding: 5px 10px; */
+    width: 100% !important;
+    text-transform: uppercase;
+}

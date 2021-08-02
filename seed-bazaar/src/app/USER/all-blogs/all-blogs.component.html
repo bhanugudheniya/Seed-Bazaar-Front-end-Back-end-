@@ -1,0 +1,43 @@
+<app-userheader></app-userheader>
+
+<section class="blogs-page pt-5 d-flex justify-content-center setPos">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-12 mt-5" *ngFor="let obj of displayArr">
+        <div class="blogs-card">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <img
+                src="{{ url }}/uploads/{{ obj.file }}"
+                class="blogs-thumb-img"
+                alt="blog thumbnail"
+              />
+            </div>
+            <div class="col-md-9 mx-auto">
+              <span
+                ><i class="fa fa-calendar-alt"></i>
+                {{ obj.dateAdded | date: "d MMM y" }}</span
+              >
+              <span style="float: right"
+                ><i class="far fa-edit"> {{ obj.author }}</i></span
+              >
+              <h5 class="mt-2 blog-title" style="font-size: 20px">
+                {{ obj.name }}
+              </h5>
+              <p class="text-justify mt-1" style="font-size: 14px">
+                {{ obj.description | slice: 0:50 }}
+                {{ obj.description.length > 50 ? "..." : "" }}
+              </p>
+              <a href="#" class="mt-5" routerLink="/blog/{{ obj.url }}"
+                ><button class="mt-2">READ MORE</button></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-user-letter></app-user-letter>
+<app-user-foooter></app-user-foooter>

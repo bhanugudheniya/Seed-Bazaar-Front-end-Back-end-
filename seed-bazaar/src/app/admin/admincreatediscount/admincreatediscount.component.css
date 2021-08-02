@@ -1,0 +1,14 @@
+.container h1
+{
+    text-align: center;
+}
+.form-group
+{
+    position: relative;
+    top: 40px;
+}
+.custom-select
+{
+    position: relative;
+    top: 40px;
+}

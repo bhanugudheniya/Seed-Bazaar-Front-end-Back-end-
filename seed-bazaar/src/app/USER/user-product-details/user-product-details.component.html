@@ -1,0 +1,526 @@
+<!-- Product Details -->
+<div class="overallContainer">
+  <app-plainheader></app-plainheader>
+  <!-- <app-userheader></app-userheader> -->
+  <section
+    *ngIf="productObj"
+    class="product-details"
+    style="background-color: white"
+  >
+    <div class="box mx-auto">
+      <div class="row d-flex">
+        <div class="col-lg-7 col-12">
+          <div class="row mt-lg-5">
+            <div class="col-lg-2 col-12 gallery">
+              <div class="product-image-gallery">
+                <img
+                  [src]="createImageLink(obj)"
+                  class="img-fluid mx-2"
+                  *ngFor="let obj of productObj.sliderFilePath; index as i"
+                  style="cursor: pointer; height: 74px"
+                  alt="Responsive Image"
+                  (click)="setImg(i)"
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-10 col-12 zoomimagecontainer ml-lg-5">
+              <div>
+                <div class="left-nav d-inline">
+                  <img
+                    src="../../../assets/left-chevron.png"
+                    class="img-fluid"
+                    style="cursor: pointer; height: 36px; width: 36px"
+                    alt="Responsive Image"
+                    (click)="prevImg()"
+                  />
+                </div>
+                <div
+                  class="product-main-image d-inline"
+                  style="justify-self: auto !important"
+                >
+                  <lib-ngx-image-zoom
+                    [lensWidth]="250"
+                    [lensHeight]="250"
+                    [magnification]="3"
+                    [enableScrollZoom]="true"
+                    [thumbImage]="createImageLink(displayImage)"
+                    [fullImage]="createImageLink(displayImage)"
+                  >
+                  </lib-ngx-image-zoom>
+                </div>
+                <!-- <p>Roll Over image to zoom in</p> -->
+                <div class="right-nav d-inline">
+                  <img
+                    src="../../../assets/right-chevron.png"
+                    class="img-fluid"
+                    style="cursor: pointer; height: 36px; width: 36px"
+                    alt="Responsive Image"
+                    (click)="nextImg()"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="col-lg-9 col-12 d-flex justify-content-center"
+                        style="text-align: center;margin: 0px;padding: 0px;">
+                        <div class="image" style="display: flex; flex-direction: row;">
+                            <div class="left-nav d-inline">
+                                <img src="../../../assets/Images/left-triangle-arrow.png" class="img-fluid"
+                                    style="cursor: pointer;" alt="Responsive Image" (click)="prevImg()">
+                            </div>
+                            <div class="product-main-image text-center d-inline" style="flex: 1;width: 350px;">
+                                <lib-ngx-image-zoom style="height: 350px !important;" [lensWidth]=150 [lensHeight]=150
+                                    [magnification]=2 [circularLens]=true [enableLens]=true [enableScrollZoom]=true
+                                    [thumbImage]=createImageLink(displayImage)
+                                    [fullImage]=createImageLink(displayImage)>
+                                </lib-ngx-image-zoom>
+                            </div>
+                            <div class="right-nav d-inline">
+                                <img src="../../../assets/Images/right-triangle-arrow.png" class="img-fluid"
+                                    style="cursor: pointer;" alt="Responsive Image" (click)="nextImg()">
+                            </div>
+                        </div>
+                    </div> -->
+          </div>
+        </div>
+        <!-- <div class="col-md-3 position-absolute"></div> -->
+        <div
+          class="col-lg-5 col-12 mobile-margin-product-description"
+          *ngIf="productObj"
+        >
+          <div class="row justify-content-start d-flex mt-lg-5">
+            <div class="col-lg-12 text-left add-cart">
+              <div class="product-details-title text-left">
+                <h1>{{ productObj.name }}</h1>
+                <h4>by {{ productObj.productDetails }}</h4>
+              </div>
+              <div class="product-rating d-inline">
+                <i
+                  class="fa fa-star"
+                  [class.checked]="
+                    productObj.rating == 1 ||
+                    productObj.rating == 2 ||
+                    productObj.rating == 3 ||
+                    productObj.rating == 4 ||
+                    productObj.rating == 5
+                  "
+                ></i>
+                <i
+                  class="fa fa-star"
+                  [class.checked]="
+                    productObj.rating == 2 ||
+                    productObj.rating == 3 ||
+                    productObj.rating == 4 ||
+                    productObj.rating == 5
+                  "
+                ></i>
+                <i
+                  class="fa fa-star"
+                  [class.checked]="
+                    productObj.rating == 3 ||
+                    productObj.rating == 4 ||
+                    productObj.rating == 5
+                  "
+                ></i>
+                <i
+                  class="fa fa-star"
+                  [class.checked]="
+                    productObj.rating == 4 || productObj.rating == 5
+                  "
+                ></i>
+                <i
+                  class="fa fa-star"
+                  [class.checked]="productObj.rating == 5"
+                ></i>
+              </div>
+
+              <hr />
+
+              <div class="product-price">
+                MRP :<span
+                  ><s>{{
+                    productObj.listPrice[productObj.variantVal].variantmrp
+                      | currency: "INR"
+                  }}</s></span
+                >
+              </div>
+
+              <div class="product-price">
+                Offer Price:<span>{{
+                  productObj.listPrice[productObj.variantVal].variantprice
+                    | currency: "INR"
+                }}</span>
+              </div>
+              <hr />
+
+              <div class="product-size">
+                Product Variant <br />
+                <select
+                  name="size"
+                  (change)="setVariantVal($event.target.value)"
+                >
+                  <option
+                    *ngFor="let variant of productObj.listPrice; index as j"
+                    [value]="j"
+                  >
+                    {{ variant.variantName }}
+                  </option>
+                </select>
+              </div>
+
+              <div class="product-stock-status mt-3">
+                <span
+                  class="instock"
+                  *ngIf="
+                    productObj.listPrice[productObj.variantVal].variantStock > 0
+                  "
+                  >In Stock</span
+                >
+                <span
+                  class="outofstock"
+                  *ngIf="
+                    productObj.listPrice[productObj.variantVal].variantStock ==
+                    0
+                  "
+                  >Out Of Stock</span
+                >
+              </div>
+
+              <div
+                class="product-category-status mt-3"
+                *ngIf="productObj.category.length > 0"
+              >
+                <p>Category:</p>
+                <span> {{ productObj.category[0].name }}</span>
+              </div>
+              <div class="row mb-4">
+                <div class="col-lg-10">
+                  <div class="row justify-content-center mt-3">
+                    <div class="col-6 product-quantity d-inline text-center">
+                      Quantity:
+                      <input
+                        type="number"
+                        name="quantity"
+                        [(ngModel)]="quantity"
+                        min="1"
+                      />
+                    </div>
+                    <div
+                      class="col-6 add-cart-btn d-inline"
+                      style="cursor: pointer; margin-top: -15px"
+                    >
+                      <br />
+                      <!-- *ngIf="productObj.listPrice[productObj.variantVal].variantStock>0" -->
+                      <a
+                        (click)="
+                          addCart(
+                            productObj.listPrice[productObj.variantVal]
+                              .variantprice
+                          )
+                        "
+                        >Add to Cart</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <section
+                class="descriptionSection product-description"
+                *ngIf="productObj"
+              >
+                <h6>Description:</h6>
+                <p class="text-justify">
+                  {{ productObj.additionalDetails }}
+                </p>
+                <p class="text-justify" [innerHtml]="productObj.blog"></p>
+              </section>
+            </div>
+          </div>
+
+          <div class="row mb-5">
+            <div class="col-12"></div>
+          </div>
+        </div>
+
+        <!-- 
+            <div class="col-lg-2 seperator">
+    
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews -->
+  <div class="row d-flex justify-content-center">
+    <section class="customer-reviews customerReview">
+      <div class="container mt-4 mb-4">
+        <h4 class="text-center">Customers' Reviews</h4>
+        <form class="d-flex justify-content-center">
+          <button
+            class="btn btnStyle"
+            data-toggle="modal"
+            (click)="consoles()"
+            data-target="#exampleModal"
+          >
+            Write a review
+          </button>
+        </form>
+        <div class="row">
+          <div class="col-md-4" *ngFor="let obj of reviewArr">
+            <div *ngIf="obj.active == true">
+              <div class="reviews-wrapper">
+                <div class="product-rating d-inline">
+                  <i
+                    class="fa fa-star"
+                    [class.checked]="
+                      obj.rating == 1 ||
+                      obj.rating == 2 ||
+                      obj.rating == 3 ||
+                      obj.rating == 4 ||
+                      obj.rating == 5
+                    "
+                  ></i>
+                  <i
+                    class="fa fa-star"
+                    [class.checked]="
+                      obj.rating == 2 ||
+                      obj.rating == 3 ||
+                      obj.rating == 4 ||
+                      obj.rating == 5
+                    "
+                  ></i>
+                  <i
+                    class="fa fa-star"
+                    [class.checked]="
+                      obj.rating == 3 || obj.rating == 4 || obj.rating == 5
+                    "
+                  ></i>
+                  <i
+                    class="fa fa-star"
+                    [class.checked]="obj.rating == 4 || obj.rating == 5"
+                  ></i>
+                  <i class="fa fa-star" [class.checked]="obj.rating == 5"></i>
+                </div>
+                <p class="text-justify">{{ obj.review }}</p>
+                <h5>- {{ obj.customerName }}</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Write Review</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="review">Review</label>
+              <input
+                type="text"
+                class="form-control"
+                id="review"
+                name="review"
+                [(ngModel)]="review"
+              />
+            </div>
+            <div class="form-group">
+              <label for="rating">Rating</label>
+              <span
+                class="fa fa-star"
+                [class.checked]="
+                  rating == 1 ||
+                  rating == 2 ||
+                  rating == 3 ||
+                  rating == 4 ||
+                  rating == 5
+                "
+                (click)="setRating(1)"
+              ></span>
+              <span
+                class="fa fa-star"
+                [class.checked]="
+                  rating == 2 || rating == 3 || rating == 4 || rating == 5
+                "
+                (click)="setRating(2)"
+              ></span>
+              <span
+                class="fa fa-star"
+                [class.checked]="rating == 3 || rating == 4 || rating == 5"
+                (click)="setRating(3)"
+              ></span>
+              <span
+                class="fa fa-star"
+                [class.checked]="rating == 4 || rating == 5"
+                (click)="setRating(4)"
+              ></span>
+              <span
+                class="fa fa-star"
+                [class.checked]="rating == 5"
+                (click)="setRating(5)"
+              ></span>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+          <button type="button" (click)="addReview()" class="btn btn-primary">
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Relative Products -->
+  <!-- <section class="relative-product">
+    <div class="container">
+        <h4 class="text" style="text-align: center;">You Might Also Like</h4>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="product-wrapper text-center">
+                    <div class="product-img">
+                        <a href="#"><img src="../../../assets/Images/amla.png" alt=""></a>
+                    </div>
+                    <div class="product-text">
+                        <h4><a href="#">Amla Powder</a></h4>
+                        <div class="pro-size mb-1">
+                            <select name="size">
+                                <option value="50G">50G</option>
+                                <option value="100G" selected>100G</option>
+                            </select>
+                        </div>
+                        <div class="pro-price mb-1">
+                            <span>₹249.00</span>
+                        </div>
+                        <div class="pro-rating mb-3">
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="add-cart-btn">
+                            <a href="#">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="product-wrapper text-center">
+                    <div class="product-img">
+                        <a href="#"><img src="../../../assets/Images/amla.png" alt=""></a>
+                    </div>
+                    <div class="product-text">
+                        <h4><a href="#">Amla Powder</a></h4>
+                        <div class="pro-size mb-1">
+                            <select name="size">
+                                <option value="50G">50G</option>
+                                <option value="100G" selected>100G</option>
+                            </select>
+                        </div>
+                        <div class="pro-price mb-1">
+                            <span>₹249.00</span>
+                        </div>
+                        <div class="pro-rating mb-3">
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="add-cart-btn">
+                            <a href="#">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="product-wrapper text-center">
+                    <div class="product-img">
+                        <a href="#"><img src="../../../assets/Images/amla.png" alt=""></a>
+                    </div>
+                    <div class="product-text">
+                        <h4><a href="#">Amla Powder</a></h4>
+                        <div class="pro-size mb-1">
+                            <select name="size">
+                                <option value="50G">50G</option>
+                                <option value="100G" selected>100G</option>
+                            </select>
+                        </div>
+                        <div class="pro-price mb-1">
+                            <span>₹249.00</span>
+                        </div>
+                        <div class="pro-rating mb-3">
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="add-cart-btn">
+                            <a href="#">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="product-wrapper text-center">
+                    <div class="product-img">
+                        <a href="#"><img src="../../../assets/Images/amla.png" alt=""></a>
+                    </div>
+                    <div class="product-text">
+                        <h4><a href="#">Amla Powder</a></h4>
+                        <div class="pro-size mb-1">
+                            <select name="size">
+                                <option value="50G">50G</option>
+                                <option value="100G" selected>100G</option>
+                            </select>
+                        </div>
+                        <div class="pro-price mb-1">
+                            <span>₹249.00</span>
+                        </div>
+                        <div class="pro-rating mb-3">
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="add-cart-btn">
+                            <a href="#">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+  <app-user-letter></app-user-letter>
+  <app-user-foooter></app-user-foooter>
+</div>

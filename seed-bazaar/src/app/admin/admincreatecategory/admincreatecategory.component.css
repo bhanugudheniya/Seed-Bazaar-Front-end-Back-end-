@@ -1,0 +1,8 @@
+.form-control:focus {
+  border-color: #dcf7c1 !important;
+  box-shadow: 0 0 0 0.2rem #dcf7c1 !important;
+}
+.row {
+  padding-left: 5px !important;
+  padding-top: 15px;
+}

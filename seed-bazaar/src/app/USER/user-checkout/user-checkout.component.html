@@ -1,0 +1,272 @@
+<app-plainheader></app-plainheader>
+<!-- <app-userheader></app-userheader> -->
+<section class="billing-details pt-5" *ngIf="cart && userObj">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="row check">
+          <div class="col-lg-12">
+            <h4 class="text-center">Billing & Shipping Details</h4>
+          </div>
+          <div class="col-lg-6 mr-auto">
+            <input
+              type="text"
+              class="form-control form-group"
+              name="userObj.firstname"
+              [value]="userObj.firstname"
+              [(ngModel)]="userObj.firstname"
+              placeholder="First Name"
+              required
+            />
+          </div>
+          <div class="col-lg-6 mr-auto">
+            <input
+              type="text"
+              class="form-control form-group"
+              name="userObj.lastname"
+              [value]="userObj.lastname"
+              [(ngModel)]="userObj.lastname"
+              placeholder="Last Name"
+              required
+            />
+          </div>
+          <div class="col-lg-12">
+            <input
+              type="email"
+              class="form-control form-group"
+              placeholder="Email"
+              name="userObj.email"
+              [value]="userObj.email"
+              [(ngModel)]="userObj.email"
+              required
+            />
+          </div>
+          <div class="col-lg-6">
+            <input
+              type="tel"
+              class="form-control form-group"
+              placeholder="Phone"
+              name="userObj.phone"
+              [value]="userObj.phone"
+              [(ngModel)]="userObj.phone"
+              required
+            />
+          </div>
+          <div class="col-lg-6">
+            <input
+              type="text"
+              class="form-control form-group"
+              name="company"
+              [(ngModel)]="company"
+              placeholder="Company (Optional)"
+            />
+          </div>
+          <div class="col-lg-12">
+            <input
+              type="text"
+              class="form-control form-group"
+              placeholder="Address Line 1"
+              name="address1"
+              [(ngModel)]="address1"
+              required
+            />
+          </div>
+          <div class="col-lg-12">
+            <input
+              type="text"
+              class="form-control form-group"
+              placeholder="Address Line 2"
+              name="address2"
+              [(ngModel)]="address2"
+            />
+          </div>
+          <!-- <div class="col-lg-6 mt-3 mr-auto">
+            <select
+              (change)="setState($event.target.value)"
+              class="form-control"
+            >
+              <option>Please select state</option>
+              <option [value]="el._id" *ngFor="let el of stateArr">
+                {{ el.name }}
+              </option>
+            </select>
+          </div> -->
+          <!-- <div class="col-lg-6 mt-3 mr-auto" *ngIf="cityArr.length > 0">
+            <select
+              (change)="setCity($event.target.value)"
+              class="form-control"
+            >
+              <option>Please select city</option>
+              <option [value]="el._id" *ngFor="let el of cityArr">
+                {{ el.name }}
+              </option>
+            </select>
+          </div> -->
+          <!-- <div class="col-lg-6 mt-3 mr-auto" *ngIf="locationArr.length > 0">
+            <select
+              (change)="setLocation($event.target.value)"
+              class="form-control"
+            >
+              <option>Please select location</option>
+              <option [value]="el._id" *ngFor="let el of locationArr">
+                {{ el.name }}
+              </option>
+            </select>
+          </div> -->
+          <div class="col-lg-6 mt-3">
+            <input
+              type="text"
+              class="form-control form-group"
+              placeholder="Zip Code"
+              name="zipCode"
+              [(ngModel)]="zipCode"
+              required
+            />
+          </div>
+
+          <!-- 
+                    <div class="col-lg-12">
+                        <input type="text" class="form-control form-group" placeholder="Address Line 1" name="userObj.address.address1"  [(ngModel)]="userObj.address.address1">
+                    </div>
+                    <div class="col-lg-12">
+                        <input type="text" class="form-control form-group" placeholder="Address Line 2" name="userObj.address..address2"  [(ngModel)]="userObj.address.address2">
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="text"  class="form-control form-group" placeholder="City" name="userObj.address.city" [(ngModel)]="userObj.address.city">
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="text" class="form-control form-group" placeholder="State" name="userObj.address.state" [(ngModel)]="userObj.address.state">
+                    </div>
+                    <div class="col-lg-12">
+                        <input type="text" class="form-control form-group" placeholder="Zip Code" name="userObj.address.zipCode" [(ngModel)]="userObj.address.zipCode" >
+                    </div> -->
+          <!-- <div class="col-lg-12">
+                        <input type="checkbox"><label for="address">&nbsp;Save this information for the next time</label>
+                    </div> -->
+          <div class="col-lg-12">
+            <textarea
+              name="orderNotes"
+              [(ngModel)]="orderNotes"
+              cols="30"
+              rows="10"
+              class="form-control form-group"
+              placeholder="Order Notes"
+              required
+            ></textarea>
+          </div>
+          <!-- <div class="col-lg-12">
+                        <input type="checkbox"><label for="ship-address">&nbsp;Ship to a different address?</label>
+                    </div> -->
+          <!-- <div class="col-lg-12">
+                        <button type="button" class="checkoutbtn btn-block" style="width: 100%;" data-toggle="modal"
+                            data-target="#exampleModal">Place Order</button>
+                    </div> -->
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="order-table table-responsive">
+          <h4 class="text-center">Your Order</h4>
+          <table class="table">
+            <tr>
+              <th>Product</th>
+              <th>Total</th>
+            </tr>
+            <!-- <tr *ngFor="let obj of productsArr;index as i">
+                            <td>{{obj.productDetails.name}} x {{cart[i].quantity}}</td>
+                            <td>{{obj.listPrice*cart[i].quantity | currency:'INR'}}</td>
+                        </tr>
+                        <tr>
+                            <td>Subtotal</td>
+                            <td>{{subtotal | currency:'INR'}}</td>
+                        </tr>
+                        <tr>
+                            <td>Shipping</td>
+                            <td>{{shippingCharges | currency:'INR'}}</td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td>{{totalPrice | currency:'INR'}}</td>
+                        </tr> -->
+
+            <tr *ngFor="let obj of cart; index as i">
+              <td>{{ obj.name }} x {{ obj.quantity }}</td>
+              <td>{{ obj.listPrice * obj.quantity | currency: "INR" }}</td>
+            </tr>
+            <tr>
+              <td>Subtotal</td>
+              <td>{{ subtotal | currency: "INR" }}</td>
+            </tr>
+            <tr>
+              <td>Shipping</td>
+              <td>{{ shippingCharges | currency: "INR" }}</td>
+            </tr>
+            <tr>
+              <td>Handling Fee</td>
+              <td>{{ handlingFee | currency: "INR" }}</td>
+            </tr>
+            <tr *ngIf="nightCharges > 0">
+              <td>Night Charges</td>
+              <td>{{ nightCharges | currency: "INR" }}</td>
+            </tr>
+            <tr>
+              <td>Total</td>
+              <td>{{ totalPrice | currency: "INR" }}</td>
+            </tr>
+            <tr style="margin: 0px; padding: 0px">
+              <td colspan="2">
+                <button
+                  type="button"
+                  class="checkoutbtn"
+                  data-toggle="modal"
+                  (click)="orderNow()"
+                >
+                  Place Order
+                </button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<!-- <div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Payment Options</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body d-flex justify-content-between">
+        <button class="btn btn-success" (click)="walletPay()">
+          Pay with wallet
+        </button>
+        <button class="btn btn-success" (click)="orderNow()">
+          Pay Credit/Debit Card
+        </button>
+        <button class="btn btn-success" (click)="cOD()">
+          Cash On Delivery
+        </button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<app-user-letter></app-user-letter>
+<app-user-foooter></app-user-foooter>

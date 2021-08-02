@@ -1,0 +1,53 @@
+<app-adminsidebar></app-adminsidebar>
+<div class="container" *ngIf="discountSpecific">
+  <div class="row" style="background-color: #F6F6F6;">
+    <div class="col-lg-12 col-md-12">
+      <h2 style="text-align: center;">Discount detail view</h2>
+     
+     
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Product Name</th>
+            <th>Valid From</th>
+            <th>Valid Till</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{discountSpecific.name}}</td>
+            <td>
+                <span *ngIf="discountSpecific.type==1">Percentage Off</span>
+                <span *ngIf="discountSpecific.type==2">Amount Off</span>
+                <span *ngIf="discountSpecific.type==3">Set Price</span>
+            </td>
+            <td>{{discountSpecific.productName}}</td>
+            <td>{{discountSpecific.validFrom | date :'short'}}</td>
+            <td>{{discountSpecific.validTill | date :'short'}}</td>
+          </tr>
+        </tbody>
+      </table>
+     
+     
+     
+     
+     
+     
+     
+      <!-- <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="Name"><b>Title</b></label>
+            <p style="border: 1px solid black; padding: 5px;">{{discountSpecific.name}}</p>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="Discription"><b>Url</b></label>
+            <p style="border: 1px solid black; padding: 5px;">{{discountSpecific.type}}</p>
+          </div>
+        </div>  
+      </form> -->
+    </div>
+  </div>
+</div>

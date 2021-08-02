@@ -1,0 +1,27 @@
+<app-adminsidebar></app-adminsidebar>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">S.No</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Product Quantity</th>
+                    <th scope="col">Product Price</th>
+                    <th scope="col">Shipping Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let obj of productsArr;index as i">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{obj.productName}}</td>
+                    <td>{{obj.quantity}}</td>
+                    <td>{{obj.price | currency:'INR'}}</td>
+                    <td>{{obj.shippingprice | currency:'INR' }}</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>

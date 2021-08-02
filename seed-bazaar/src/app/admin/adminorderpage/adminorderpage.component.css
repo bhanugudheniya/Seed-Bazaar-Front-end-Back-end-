@@ -1,0 +1,10 @@
+.form-control:focus{
+    border-color: #EED47E !important;
+    box-shadow: 0 0 0 0.2rem #F0D884 !important;
+}
+.bt{
+    margin: 5px;
+}
+.h{
+    text-align: center;
+}

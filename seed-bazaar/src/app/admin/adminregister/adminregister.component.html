@@ -1,0 +1,31 @@
+<div class="container-fluid bg ">
+  <div class="row">
+    <div class=" col-md-4  col-lg-4 col-sm-12 "></div>
+    <div class="col-md-4 col-lg-4 col-sm-12 ">
+      <!--FORM START-->
+      <form class="form-container">
+        <div class="form-group">
+          <label for="Name"><b style="color:#eee">Name</b>
+          </label>
+          <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" [(ngModel)]="name"  />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1"><b style="color:#eee">Email</b>
+          </label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter email" name="email" [(ngModel)]="email" />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1"><b style="color:#eee;">Password</b></label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"  name="password" [(ngModel)]="password" />
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block" (click)="adminRegister()">
+          Register
+        </button>
+      </form>
+      <!--FORM END-->
+    </div>
+    <div class="col-md-4 col-lg-4 col-sm-12"></div>
+  </div>
+</div>

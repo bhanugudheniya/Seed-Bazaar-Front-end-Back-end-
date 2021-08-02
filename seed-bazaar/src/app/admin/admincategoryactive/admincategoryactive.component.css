@@ -1,0 +1,12 @@
+.table-hover tbody tr:hover > td {
+  background-color: #DCF7C1;
+}
+.table-hover tbody tr:hover > th {
+  background-color: #DCF7C1;
+}  
+.table{
+    border: 2px solid #C9A43F;
+}
+.btn {
+  margin : 1px;
+}

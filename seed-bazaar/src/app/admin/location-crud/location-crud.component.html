@@ -1,0 +1,59 @@
+<app-adminsidebar></app-adminsidebar>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-5">
+            <form [formGroup]="locationForm" (ngSubmit)="handleSubmit()">
+
+                <div class="form-group">
+                    <label for="">Select State</label>
+                    <select class="form-control" (change)="setState($event.target.value)">
+                        <option value="" >please select state</option>
+                        <option [value]="el._id" *ngFor="let el of stateArr">{{el.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Select City</label>
+                    <select class="form-control" (change)="setCity($event.target.value)">
+                        <option value="" >please select city</option>
+                        <option [value]="el._id" *ngFor="let el of cityArr">{{el.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Enter name</label>
+                    <input type="text" class="form-control" formControlName="name" placeholder="locationName">
+                </div>
+                <div class="form-group">
+                    <label for="">Enter nightCharges</label>
+                    <input type="text" class="form-control" formControlName="nightFee" placeholder="Night Fee">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">State Name</th>
+                    <th scope="col">City Name</th>
+                    <th scope="col">name</th>
+                    <!-- <th scope="col">Handle</th> -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let el of locationArr;index as i">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{el.stateName}}</td>
+                    <td>{{el.cityName}}</td>
+                    <td>{{el.name}}</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>

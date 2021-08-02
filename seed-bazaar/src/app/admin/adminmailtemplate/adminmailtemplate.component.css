@@ -1,0 +1,41 @@
+.start
+{
+    background-color:whitesmoke;
+    height: 850px;
+}
+.row-1
+{
+    height: 100px;
+    text-align: center;
+}
+.row-2
+{
+    height: 150px;
+}
+.row-2 h3
+{
+    position: relative;
+    left: 30px;
+    text-align: justify;
+}
+.row-2 p
+{
+    padding: 20px;
+    text-align: justify;
+}
+.row
+{
+    padding: 20px;
+}
+button
+{
+    width: 300px;
+    font-size: 30px;
+    position: relative;
+    /* right: 12px; */
+    border-radius: 20px;
+    background-color:lightblue;
+    color: white;
+}
+
+
